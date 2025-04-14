@@ -48,7 +48,7 @@ function transformar(dados) {
 }
 
 function deletarItem(id) {
-    fetch(`http://localhost:8080/turmas/deletar/${id}`, {
+    fetch(`http://localhost:8080/atividades/deletar/${id}`, {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json',

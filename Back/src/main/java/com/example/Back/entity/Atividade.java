@@ -15,5 +15,5 @@ public class Atividade {
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private Long id;
 
-    private String descricão;
+    private String descricao;
 }
