@@ -20,6 +20,7 @@ public class ProfessorController {
     public ResponseEntity<String> criarProfessor(@RequestBody Professor professor){
         try{
             String resultado = professorService.salvarProfessor(professor);
+            return ResponseEntity.ok(resultado);
         } catch (IllegalArgumentException e){
             return ResponseEntity.badRequest().body(e.getMessage());
         }
