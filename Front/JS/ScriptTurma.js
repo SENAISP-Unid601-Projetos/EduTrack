@@ -1,5 +1,4 @@
-function cadastrarPaciente(event) {
-    event.preventDefault();
+function cadastrar() {
  
     const nomeTurma = document.getElementById('emailLogin').value;
 
@@ -13,21 +12,22 @@ function cadastrarPaciente(event) {
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ nomeTurma })
+        body: JSON.stringify({nome: nomeTurma})
     })
     .then(response => {
         if (!response.ok) {
-            return response.json().then(err => {
+            return response.text().then(err => {
                 throw new Error(err.message || 'Erro na resposta do servidor');
             });
         }
-        return response.json();
+        return response.text();
     })
     .then(() => {
         alert("Turma cadastrada com sucesso!");
+        window.location.href = 'principal.html';
     })
     .catch(error => {
         console.error('Erro ao cadastrar turma:', error);
-        alert(`Erro ao cadastrar turma: ${error.message || 'Erro desconhecido.'}`);
+        alert(`Erro ao cadastrar turma: ${nomeTurma}`);
     });
 }
