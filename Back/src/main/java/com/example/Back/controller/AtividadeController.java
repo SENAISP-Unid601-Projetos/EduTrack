@@ -1,23 +1,22 @@
 package com.example.Back.controller;
 
-import com.example.Back.Service.ProfessorService;
-import com.example.Back.entity.Professor;
+import com.example.Back.Service.AtividadeService;
+import com.example.Back.entity.Atividade;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/professores")
-public class ProfessorController {
-
+@RequestMapping("/atividades")
+public class AtividadeController {
     @Autowired
-    private ProfessorService professorService;
+    private AtividadeService atividadeService;
 
     @PostMapping
-    public ResponseEntity<String> criarProfessor(@RequestBody Professor professor){
+    public ResponseEntity<String> criarAtividade(@RequestBody Atividade atividade){
         try{
-            String resultado = professorService.salvarProfessor(professor);
+            String resultado = atividadeService.salvarAtividade(atividade);
             return ResponseEntity.ok(resultado);
         } catch (IllegalArgumentException e){
             return ResponseEntity.badRequest().body(e.getMessage());
@@ -25,18 +24,18 @@ public class ProfessorController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Professor>> listarProfessores(){
+    public ResponseEntity<List<Atividade>> listarAtividades(){
         try{
-            return ResponseEntity.ok(professorService.listarProfessor());
+            return ResponseEntity.ok(atividadeService.listarAtividade());
         } catch (IllegalArgumentException e){
             return ResponseEntity.badRequest().build();
         }
     }
 
     @PutMapping("/atualizar/{id}")
-    public ResponseEntity<String> atualizarProfessor(@PathVariable Long id, @RequestBody Professor professor) {
+    public ResponseEntity<String> atualizarAtividade(@PathVariable Long id, @RequestBody Atividade atividade) {
         try {
-            String resultado = professorService.atualizarTurma(id, professor);
+            String resultado = atividadeService.atualizarAtividade(id, atividade);
             return ResponseEntity.ok(resultado);
         } catch (IllegalArgumentException e) {
             return ResponseEntity.badRequest().body(e.getMessage());
@@ -44,13 +43,12 @@ public class ProfessorController {
     }
 
     @DeleteMapping("/deletar/{id}")
-    public ResponseEntity<String> deletarTurma(@PathVariable Long id) {
+    public ResponseEntity<String> deletarAtividade(@PathVariable Long id) {
         try {
-            String resultado = professorService.deletarTurma(id);
+            String resultado = atividadeService.deletarAtividade(id);
             return ResponseEntity.ok(resultado);
         } catch (IllegalArgumentException e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
-
 }
