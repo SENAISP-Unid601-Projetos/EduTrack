@@ -41,4 +41,11 @@ public class ProfessorService {
         }
         return "Erro ao deletar";
     }
+
+    public Professor professorPorEmail(String email) {
+        if(professorRepository.existsByEmail(email)){
+            return professorRepository.findByEmail(email);
+        }
+        return null;
+    }
 }

@@ -33,6 +33,15 @@ public class ProfessorController {
         }
     }
 
+    @GetMapping("get/{email}")
+    public ResponseEntity<Professor> professorEmail(@PathVariable String email){
+        try{
+            return ResponseEntity.ok(professorService.professorPorEmail());
+        } catch (IllegalArgumentException e){
+            return ResponseEntity.badRequest().build();
+        }
+    }
+
     @PutMapping("/atualizar/{id}")
     public ResponseEntity<String> atualizarProfessor(@PathVariable Long id, @RequestBody Professor professor) {
         try {
