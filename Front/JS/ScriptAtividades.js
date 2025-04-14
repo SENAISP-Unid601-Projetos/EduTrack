@@ -1,6 +1,6 @@
 function cadastrarAtividades() {
  
-    const nomeAtividade = document.getElementById('loginButton').value;
+    const nomeAtividade = document.getElementById('emailLogin').value;
 
     if (!nomeAtividade) {
         alert('Por favor, preencha o campo com o nome da atividade.');

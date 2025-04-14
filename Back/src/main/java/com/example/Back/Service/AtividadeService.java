@@ -26,7 +26,7 @@ public class AtividadeService {
     public String atualizarAtividade(Long id, Atividade atividade) {
         if(atividadeRepository.existsById(id)){
             Atividade atividadeExistente = atividadeRepository.findById(id).get();
-            atividadeExistente.setDescricão(atividade.getDescricão());
+            atividadeExistente.setDescricao(atividade.getDescricao());
             atividadeRepository.save(atividadeExistente);
             return "Atualizado com sucesso";
         }
