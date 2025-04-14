@@ -36,7 +36,7 @@ public class ProfessorController {
     @GetMapping("get/{email}")
     public ResponseEntity<Professor> professorEmail(@PathVariable String email){
         try{
-            return ResponseEntity.ok(professorService.professorPorEmail());
+            return ResponseEntity.ok(professorService.professorPorEmail(email));
         } catch (IllegalArgumentException e){
             return ResponseEntity.badRequest().build();
         }
