@@ -26,7 +26,6 @@ public class TurmaService {
         if(turmaRepository.existsById(id)){
             Turma turmaexistente = turmaRepository.findById(id).get();
             turmaexistente.setNome(turma.getNome());
-            turmaexistente.setProfessor(turma.getProfessor());
             turmaRepository.save(turmaexistente);
             return "Atualizado com sucesso";
         }
