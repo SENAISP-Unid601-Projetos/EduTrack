@@ -8,31 +8,34 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class ProfessorService {
 
     @Autowired
-    ProfessorRepository professorRepository;
+    private ProfessorRepository professorRepository;
 
-    public String salvarProfessor(Professor professor) {
-        if (professorRepository.existsByEmail(professor.getEmail())){
+    public String salvarProfessor(ProfessorDTO professordto) {
+        if (professorRepository.existsByEmail(professordto.getEmail())){
             return "Já existe um professor cadastrado com esse e-mail";
         }
-        professorRepository.save(professor);
+        professorRepository.save(toEntity(professordto));
         return "Professor cadastrado";
     }
 
-    public List<Professor> listarProfessor() {
-        return professorRepository.findAll();
+    public List<ProfessorDTO> listarProfessor() {
+        return professorRepository.findAll().stream()
+                .map(this::toProfessorDTO)
+                .collect(Collectors.toList());
     }
 
-    public String atualizarTurma(Long id, Professor professor) {
+    public String atualizarTurma(Long id, ProfessorDTO professordto) {
         if(professorRepository.existsById(id)){
             Professor professorExistente = professorRepository.findById(id).get();
-            professorExistente.setNome(professor.getNome());
-            professorExistente.setEmail(professor.getEmail());
-            professorExistente.setSenha(professor.getSenha());
+            professorExistente.setNome(professordto.getNome());
+            professorExistente.setEmail(professordto.getEmail());
+            professorExistente.setSenha(professordto.getSenha());
             professorRepository.save(professorExistente);
             return "Atualizado com sucesso";
         }

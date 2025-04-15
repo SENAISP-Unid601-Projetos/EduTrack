@@ -1,6 +1,7 @@
 package com.example.Back.controller;
 
 import com.example.Back.Service.TurmaService;
+import com.example.Back.dto.TurmaDTO;
 import com.example.Back.entity.Turma;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -14,7 +15,7 @@ public class TurmaController {
     private TurmaService turmaService;
 
     @PostMapping
-    public ResponseEntity<String> criarTurma(@RequestBody Turma turma) {
+    public ResponseEntity<String> criarTurma(@RequestBody TurmaDTO turma) {
         try {
             String resultado = turmaService.salvarTurma(turma);
             return ResponseEntity.ok(resultado);
@@ -24,7 +25,7 @@ public class TurmaController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Turma>> listarTurmas() {
+    public ResponseEntity<List<TurmaDTO>> listarTurmas() {
         try {
             return ResponseEntity.ok(turmaService.listarTurmas());
         } catch (IllegalArgumentException e) {
@@ -33,7 +34,7 @@ public class TurmaController {
     }
 
     @GetMapping("/get/{email}")
-    public ResponseEntity<List<Turma>> listarTurmasProfessores(@PathVariable String email) {
+    public ResponseEntity<List<TurmaDTO>> listarTurmasProfessores(@PathVariable String email) {
         try {
             return ResponseEntity.ok(turmaService.listarTurmasporProfessor(email));
         } catch (IllegalArgumentException e) {
@@ -42,7 +43,7 @@ public class TurmaController {
     }
 
     @PutMapping("/atualizar/{id}")
-    public ResponseEntity<String> atualizarTurma(@PathVariable Long id, @RequestBody Turma turma) {
+    public ResponseEntity<String> atualizarTurma(@PathVariable Long id, @RequestBody TurmaDTO turma) {
         try {
             String resultado = turmaService.atualizarTurma(id, turma);
             return ResponseEntity.ok(resultado);

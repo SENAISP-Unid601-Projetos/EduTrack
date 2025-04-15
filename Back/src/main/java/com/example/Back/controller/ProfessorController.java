@@ -1,6 +1,7 @@
 package com.example.Back.controller;
 
 import com.example.Back.Service.ProfessorService;
+import com.example.Back.dto.ProfessorDTO;
 import com.example.Back.entity.Professor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -15,7 +16,7 @@ public class ProfessorController {
     private ProfessorService professorService;
 
     @PostMapping
-    public ResponseEntity<String> criarProfessor(@RequestBody Professor professor){
+    public ResponseEntity<String> criarProfessor(@RequestBody ProfessorDTO professor){
         try{
             String resultado = professorService.salvarProfessor(professor);
             return ResponseEntity.ok(resultado);
@@ -25,7 +26,7 @@ public class ProfessorController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Professor>> listarProfessores(){
+    public ResponseEntity<List<ProfessorDTO>> listarProfessores(){
         try{
             return ResponseEntity.ok(professorService.listarProfessor());
         } catch (IllegalArgumentException e){
@@ -43,7 +44,7 @@ public class ProfessorController {
     }
 
     @PutMapping("/atualizar/{id}")
-    public ResponseEntity<String> atualizarProfessor(@PathVariable Long id, @RequestBody Professor professor) {
+    public ResponseEntity<String> atualizarProfessor(@PathVariable Long id, @RequestBody ProfessorDTO professor) {
         try {
             String resultado = professorService.atualizarTurma(id, professor);
             return ResponseEntity.ok(resultado);
