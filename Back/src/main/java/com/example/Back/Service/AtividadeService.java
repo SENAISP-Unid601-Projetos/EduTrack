@@ -40,4 +40,8 @@ public class AtividadeService {
         }
         return "Erro ao deletar";
     }
+
+    public List<Atividade> listarAtividadeporTurma(Long id) {
+
+    }
 }

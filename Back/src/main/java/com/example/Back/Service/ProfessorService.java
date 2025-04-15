@@ -1,5 +1,6 @@
 package com.example.Back.Service;
 
+import com.example.Back.dto.ProfessorDTO;
 import com.example.Back.entity.Professor;
 import com.example.Back.entity.Turma;
 import com.example.Back.repository.ProfessorRepository;
@@ -10,10 +11,14 @@ import java.util.List;
 
 @Service
 public class ProfessorService {
+
     @Autowired
     ProfessorRepository professorRepository;
 
     public String salvarProfessor(Professor professor) {
+        if (professorRepository.existsByEmail(professor.getEmail())){
+            return "Já existe um professor cadastrado com esse e-mail";
+        }
         professorRepository.save(professor);
         return "Professor cadastrado";
     }
@@ -47,5 +52,18 @@ public class ProfessorService {
             return professorRepository.findByEmail(email);
         }
         return null;
+    }
+
+    private ProfessorDTO toProfessorDTO(Professor professor) {
+        return new ProfessorDTO(professor.getId(), professor.getNome(), professor.getEmail(), professor.getSenha());
+    }
+
+    private Professor toEntity(ProfessorDTO dto) {
+        Professor professor = new Professor();
+        professor.setId(dto.getId());
+        professor.setNome(dto.getNome());
+        professor.setEmail(dto.getEmail());
+        professor.setSenha(dto.getSenha());
+        return professor;
     }
 }

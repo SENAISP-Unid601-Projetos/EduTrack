@@ -1,6 +1,7 @@
 package com.example.Back.Service;
 
 import com.example.Back.entity.Turma;
+import com.example.Back.repository.ProfessorRepository;
 import com.example.Back.repository.TurmaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,6 +13,8 @@ public class TurmaService {
     @Autowired
     private TurmaRepository turmaRepository;
 
+    @Autowired
+    ProfessorRepository professorRepository;
 
     public String salvarTurma(Turma turma) {
         turmaRepository.save(turma);
@@ -26,6 +29,7 @@ public class TurmaService {
         if(turmaRepository.existsById(id)){
             Turma turmaexistente = turmaRepository.findById(id).get();
             turmaexistente.setNome(turma.getNome());
+            turmaexistente.setProfessor(turma.getProfessor());
             turmaRepository.save(turmaexistente);
             return "Atualizado com sucesso";
         }
@@ -39,4 +43,12 @@ public class TurmaService {
         }
         return "Erro ao deletar";
     }
+
+    public List<Turma> listarTurmasporProfessor(String email) {
+        if(turmaRepository.existsByEmail(email)){
+            return turmaRepository.findByEmail(email);
+        }
+        return null;
+    }
+
 }

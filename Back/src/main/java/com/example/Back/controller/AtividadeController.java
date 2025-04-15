@@ -32,6 +32,15 @@ public class AtividadeController {
         }
     }
 
+    @GetMapping("/get/{id}")
+    public ResponseEntity<List<Atividade>> listarAtividadesPorTurma(@PathVariable Long id){
+        try{
+            return ResponseEntity.ok(atividadeService.listarAtividadeporTurma(id));
+        } catch (IllegalArgumentException e){
+            return ResponseEntity.badRequest().build();
+        }
+    }
+
     @PutMapping("/atualizar/{id}")
     public ResponseEntity<String> atualizarAtividade(@PathVariable Long id, @RequestBody Atividade atividade) {
         try {

@@ -32,6 +32,15 @@ public class TurmaController {
         }
     }
 
+    @GetMapping("/get/{email}")
+    public ResponseEntity<List<Turma>> listarTurmasProfessores(@PathVariable String email) {
+        try {
+            return ResponseEntity.ok(turmaService.listarTurmasporProfessor(email));
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.badRequest().build();
+        }
+    }
+
     @PutMapping("/atualizar/{id}")
     public ResponseEntity<String> atualizarTurma(@PathVariable Long id, @RequestBody Turma turma) {
         try {
