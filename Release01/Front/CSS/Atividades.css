@@ -1,0 +1,46 @@
+.todaApagina {
+    display: flex;
+    flex-direction: row;
+}
+.resto {
+    display: flex;
+}
+.menu {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    height: auto;
+    padding: 2%;
+    height: auto;
+    width: 14%;
+}
+
+.logoBloco {
+    text-align: center;
+    color: white;
+}
+
+.logo {
+    width: 70%;
+    height: auto;
+}
+
+.botoesElogo {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.botoes {
+    border-style: none;
+    border-radius: 9%;
+    padding: 5%;
+    color: white;
+    background-color: red;
+    margin: 0 20%;
+}
+.botaoSair {
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    justify-items: flex-end;
+}
