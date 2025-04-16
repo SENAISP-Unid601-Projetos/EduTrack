@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alunos - Sistema SENAI</title>
+    <link rel="stylesheet" href="../CSS/Aluno.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <img src="/Recursos/senai.png" class="logo" alt="Logo SENAI">
+           
+
+            <nav class="menu">
+                <button class="menu-btn">Turmas</button>
+                <button class="menu-btn active">Alunos</button>
+                <button class="menu-btn">Atividades</button>
+            </nav>
+
+            <button class="logout-btn">Sair</button>
+        </aside>
+
+        <main class="main-content">
+            <div class="header">
+                <h1>Alunos</h1>
+                <button class="add-btn">+ Aluno</button>
+            </div>
+
+            <table class="alunos-table">
+                <thead>
+                    <tr>
+                        <th>CPF</th>
+                        <th>Nome</th>
+                        <th>Turma</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>xxxxxxxxx</td>
+                        <td>xxxxxxxxx</td>
+                        <td>xxxxxxxxx</td>
+                        <td>
+                            <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+                            <button class="action-btn view"><i class="fas fa-eye"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+    </div>
+</body>
+
+</html>
