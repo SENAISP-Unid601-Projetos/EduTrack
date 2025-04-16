@@ -1,27 +1,30 @@
-function Verificar() {
-  let email = document.getElementById('emailLogin');
-  let senha = document.getElementById('passwordLogin');
+function login() {
+  const email = document.getElementById('emailLogin').value;
+  const senha = document.getElementById('passwordLogin').value;
 
-  fetch(`http://localhost:8080/professores/get/${email}`)
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error('Não existe um usuário com esse email');
+  fetch('http://localhost:8080/professores/login', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ email, senha }),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.status === 'success') {
+        alert(data.message);
+
+        // Salva o e-mail na sessão
+        sessionStorage.setItem('email', email);
+
+        // Redireciona na mesma aba
+        window.location.href = 'HTML/principal.html';
+      } else {
+        alert(data.message);
       }
-      return response.json();
     })
-    .then((professor) => {
-      console.log(professor);
-      Compara(professor, senha);
-    })
-    .catch((erro) => {
-      console.error(erro);
+    .catch((error) => {
+      alert('Erro ao fazer login');
+      console.log(error);
     });
-}
-
-function Compara(professor, senha) {
-  if (professor.senha === senha) {
-    window.location.href = 'HTML/principal.html';
-  } else {
-    alert('Uma ou mais informações erradas.');
-  }
 }

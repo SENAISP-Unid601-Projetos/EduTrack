@@ -1,5 +1,6 @@
 package com.example.Back.Service;
 
+import com.example.Back.dto.LoginDTO;
 import com.example.Back.dto.ProfessorDTO;
 import com.example.Back.entity.Professor;
 import com.example.Back.entity.Turma;
@@ -52,9 +53,13 @@ public class ProfessorService {
 
     public Professor professorPorEmail(String email) {
         if(professorRepository.existsByEmail(email)){
-            return professorRepository.findByEmail(email);
+            return professorRepository.findByEmail(email).get();
         }
         return null;
+    }
+
+    public boolean authenticateUser(LoginDTO loginDTO) {
+        return professorRepository.findByEmail(loginDTO.getEmail()).map(professor -> professor.getSenha().equals(loginDTO.getSenha())).orElse(false);
     }
 
     private ProfessorDTO toProfessorDTO(Professor professor) {

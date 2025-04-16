@@ -55,7 +55,7 @@ public class TurmaService {
 
     public List<TurmaDTO> listarTurmasporProfessor(String email) {
         if(professorRepository.existsByEmail(email)){
-            return turmaRepository.findByProfessor(professorRepository.findByEmail(email)).stream().map(this::toTurmaDTO).collect(Collectors.toList());
+            return turmaRepository.findByProfessor(professorRepository.findByEmail(email).get()).stream().map(this::toTurmaDTO).collect(Collectors.toList());
         }
         return null;
     }
