@@ -5,6 +5,7 @@
 .resto {
     display: flex;
 }
+
 .menu {
     display: flex;
     flex-direction: column;
@@ -33,12 +34,13 @@
 .botoes {
     border-style: none;
     border-radius: 9%;
-    padding: 5%;
+    padding: 8%;
     color: white;
     background-color: red;
     margin: 0 20%;
 }
 .botaoSair {
+    margin-top: 90%;
     display: flex;
     flex-direction:column;
     justify-content: center;
