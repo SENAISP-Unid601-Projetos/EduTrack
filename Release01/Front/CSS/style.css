@@ -1,13 +1,70 @@
 body {
-    background-image: url('../Recursos/plano.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    filter: blur(10);
-    color: white;
     margin: 0;
-    padding: 0;
-    height: 100dvh;
+    font-family: Arial, sans-serif;
+    display: flex;
+    height: 100vh;
+    background-image: url(../Recursos/Sala_senai.png);
+}
+.login-container {
+    width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #000;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px;
+}
+.login-form {
+    text-align: center;
+}
+.login-form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+.login-form button {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.login-form button#entrar {
+    background-color: #ff0000;
+    color: #fff;
+}
+.login-form button#cadastre-se {
+    background-color: #ff0000;
+    color: #fff;
+}
+.senai-container {
+    width: 50%;
+    background-image: url('senai_classroom.jpg'); /* Substitua pelo caminho da imagem */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.senai-overlay {
+    background-color: #fff;
+    color: #000000;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+}
+.senai-overlay h1 {
+    font-size: 3em;
+    margin: 0;
+    color: #ff0000;
+}
+.senai-overlay p {
+    font-size: 1.2em;
+    margin: 5px 0;
 }
