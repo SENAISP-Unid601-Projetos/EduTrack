@@ -57,8 +57,9 @@ public class AtividadeService {
     }
 
     public List<AtividadeDTO> listarAtividadeporTurma(Long idTurma) {
-        if(turmaRepository.existsById(idTurma)){
-            return atividadeRepository.findAllByTurma(turmaRepository.findById(idTurma).get()).stream()
+        if(turmaRepository.existsById(idTurma)) {
+            Turma turma = turmaRepository.findById(idTurma).orElseThrow(() -> new RuntimeException("Turma não encontrada"));
+            return atividadeRepository.findAllByTurma(turma).stream()
                     .map(this::toAtividadeDTO)
                     .collect(Collectors.toList());
         }

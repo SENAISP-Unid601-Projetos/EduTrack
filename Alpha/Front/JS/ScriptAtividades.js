@@ -1,9 +1,20 @@
 window.addEventListener('DOMContentLoaded', listarAtividades);
 
+const params = new URLSearchParams(window.location.search);
+const idTurma = params.get('idTurma');
+console.log(idTurma);
+
 function listarAtividades() {
-    const params = new URLSearchParams(window.location.search);
-    const idTurma = params.get('idTurma');
-    console.log('ID da turma recebido:', idTurma);
+    let cadastroBtn = document.getElementById('cadastro_atividade');
+    cadastroBtn.href = `/HTML/cadastro_atividade.html?idTurma=${idTurma}`
+    console.log('ID da turma recebido:', idTurma); // Verifique se o ID está correto
+
+    // Certifique-se de que idTurma é válido antes de fazer a requisição
+    if (!idTurma) {
+        console.error("ID da turma não encontrado na URL.");
+        return;
+    }
+
     fetch(`http://localhost:8080/atividades/get/${idTurma}`)
         .then(response => {
             if (!response.ok) {
@@ -18,8 +29,8 @@ function listarAtividades() {
         .catch(erro => {
             console.error('Erro:', erro);
         });
-
 }
+
 
 function transformar(dados) {
     const tabela = document.getElementById('table');
@@ -73,7 +84,9 @@ function deletarItem(id) {
 }
 
 function cadastrarAtividades() {
- 
+    const params = new URLSearchParams(window.location.search);
+    const idTurma = params.get('idTurma');
+    
     const nomeAtividade = document.getElementById('emailLogin').value;
 
     if (!nomeAtividade) {
@@ -81,12 +94,26 @@ function cadastrarAtividades() {
         return;
     }
 
+    // Verifique se o idTurma está presente antes de enviar a requisição
+    if (!idTurma) {
+        alert('ID da turma não encontrado!');
+        return;
+    }
+
+    console.log(JSON.stringify({
+        descricao: nomeAtividade,
+        turma_id: idTurma // Certifique-se de que está enviando apenas o idTurma
+    }))
+
     fetch('http://localhost:8080/atividades', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({descricao: nomeAtividade})
+        body: JSON.stringify({
+            descricao: nomeAtividade,
+            id_turma: idTurma // Certifique-se de que está enviando apenas o idTurma
+        })
     })
     .then(response => {
         if (!response.ok) {
@@ -98,11 +125,12 @@ function cadastrarAtividades() {
     })
     .then(() => {
         alert("Atividade cadastrada com sucesso!");
-        window.location.href = 'atividades.html';
+        window.location.href = `atividades.html?idTurma=${idTurma}`; // Redireciona para a página de atividades
     })
     .catch(error => {
         console.error('Erro ao cadastrar atividade:', error);
         alert(`Erro ao cadastrar atividade: ${nomeAtividade}`);
     });
 }
+
 
