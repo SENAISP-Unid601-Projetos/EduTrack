@@ -1,11 +1,11 @@
 package com.example.Back.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
+
+import java.util.List;
 
 @Entity
 @Data
@@ -17,4 +17,11 @@ public class Turma {
 
     private String nome;
 
+    @ManyToOne
+    @JoinColumn(name = "professor_id")
+    private Professor professor;
+
+    @OneToMany(mappedBy = "turma", cascade = CascadeType.ALL)
+    @JsonIgnore
+    private List<Atividade> atividades;
 }
