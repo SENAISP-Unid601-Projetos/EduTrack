@@ -1,0 +1,148 @@
+body {
+    margin: 0;
+    background-image: url(/media/salaSenai.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.todaApagina {
+    display: flex;
+    flex-direction: row;
+}
+.resto {
+    display: flex;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    height: auto;
+    padding: 2%;
+    height: 100vh;
+    width: 14%;
+}
+
+.logoBloco {
+    text-align: center;
+    color: white;
+}
+
+.logo {
+    width: 100%;
+}
+
+.botoesElogo {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.botoes {
+    border-style: none;
+    border-radius: 20px;
+    padding: 8% 15%;
+    color: white;
+    background-color: red;
+    margin: 0 10%;
+    font-size: x-large;
+}
+.botaoSair {
+    margin-top: 120%;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    justify-items: flex-end;
+}
+
+.main {
+    flex: 1;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.6);
+    margin: 2%;
+    border-radius: 15px;
+}
+
+  .btn-add {
+    background-color: red;
+    color: white;
+    padding: 20px 40px;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    float: right;
+    cursor: pointer;
+    font-size: larger;
+    margin: 2%;
+  }
+
+  table {
+    width: 100%;
+    border: 1px solid #000;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: x-large;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  table, th {
+    border-bottom: 1px solid #000;
+    border-top: 1px solid #000;
+  }
+
+  th, td {
+    padding: 10px;
+    text-align: center;
+  }
+
+
+  .modal {
+    position: fixed;
+    bottom: 10%;
+    left: 58%;
+    transform: translateX(-50%);
+    background-color: white;
+    width: 600px;
+    padding: 40px;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+    display: none;
+    z-index: 1000;
+    font-size: large;
+  }
+
+  .modal h2 {
+    margin-bottom: 15px;
+  }
+
+  .modal p {
+    margin-bottom: 10px;
+    text-align: justify;
+  }
+
+  .modal .ok-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+  }
+
+  .botao{
+    padding: 10px;
+    background-color: red;
+    border-radius: 10px;
+    border: none;
+  }
+
+.titulo{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    margin-top: 0;
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 2% 0%;
+}
