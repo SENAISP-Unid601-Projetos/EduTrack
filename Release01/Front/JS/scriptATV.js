@@ -14,7 +14,7 @@ async function carregarAtividades() {
     atividades.forEach((atividade, index) => {
       const linha = document.createElement("tr");
       linha.innerHTML = `
-        <td>${atividade.id}</td>
+        <td>${atividade.nome}</td>
         <td>${atividade.descricao}</td>
         <td>${atividade.id_turma}</td>
         <td class="actions">
@@ -29,6 +29,32 @@ async function carregarAtividades() {
     console.error("Erro ao carregar:", erro);
     alert("Erro ao carregar atividades.");
   }
+}
+
+async function AdicionarAtividadeEFechar() {
+    const atv = {
+        nome: document.getElementById('nome').value,
+        descricao: document.getElementById('desc').value,
+        turma_id: parseInt(document.getElementById('tur').value)
+    }
+
+    try {
+        const resposta = await fetch('http://localhost:8080/atividades', {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(atv)
+        });
+
+        const resultado = await resposta.text();
+        alert(resultado);
+        carregarAtividades();
+        Fechar();
+
+    } catch (error) {
+        console.error("Erro ao carregar:", error);
+        alert("Erro ao postar atividades.");
+    }
+    
 }
 
 async function deleteAtividade(id) {
@@ -69,8 +95,7 @@ function AdicionarAtividadeMostrar() {
     div.style.flexDirection = "column";
 }
 
-function AdicionarAtividadeEFechar() {
-    
+function Fechar() {
     const div = document.getElementById('addAtv');
     div.style.display = "none";
 }
