@@ -7,9 +7,9 @@ const instance = axios.create({
     }
 });
 
-async function postTurma(sigla, nome, termo) {
+async function postTurma(nome, idProfessor) {
     try {
-        const data = { sigla, nome, termo };
+        const data = { nome, idProfessor };
         const response = await instance.post('/turmas', data);
         if (response.status === 200) {
             return response.data;
@@ -19,3 +19,6 @@ async function postTurma(sigla, nome, termo) {
         throw err;
     }
 }
+
+
+
