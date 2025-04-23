@@ -24,9 +24,9 @@ public class AlunoService {
     public String salvarAluno(AlunoDTO alunoDTO) {
         if(turmaRepository.existsById(alunoDTO.getId_turma())){
             alunoRepository.save(toEntity(alunoDTO));
-            return "Turma cadastrada";
+            return "Aluno cadastrado";
         }
-        return "Professor não existente";
+        return "Turma não existente";
     }
 
     public List<AlunoDTO> listarAlunos() {
