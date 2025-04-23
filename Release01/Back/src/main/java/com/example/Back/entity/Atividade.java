@@ -12,6 +12,8 @@ public class Atividade {
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private Long id;
 
+    private String nome;
+
     private String descricao;
 
     @ManyToOne

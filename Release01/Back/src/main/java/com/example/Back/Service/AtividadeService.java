@@ -67,12 +67,13 @@ public class AtividadeService {
     }
 
     private AtividadeDTO toAtividadeDTO(Atividade atividade) {
-        return new AtividadeDTO(atividade.getId(), atividade.getDescricao(), atividade.getTurma().getId());
+        return new AtividadeDTO(atividade.getId(), atividade.getNome(), atividade.getDescricao(), atividade.getTurma().getId());
     }
 
     private Atividade toEntity(AtividadeDTO dto) {
         Atividade atividade = new Atividade();
         atividade.setId(dto.getId());
+        atividade.setNome(dto.getNome());
         atividade.setDescricao(dto.getDescricao());
         atividade.setTurma(turmaRepository.findById(dto.getId_turma()).get());
         return atividade;
