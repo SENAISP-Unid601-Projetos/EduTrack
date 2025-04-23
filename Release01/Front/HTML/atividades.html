@@ -27,7 +27,19 @@
 
     <div class="main">
       <h1 class="titulo">Atividades</h1>
-      <button class="btn-add">+ Atividade</button>
+      <button class="btn-add" onclick="AdicionarAtividadeMostrar()">+ Atividade</button>
+      <div class="adicionarAtividade" id="addAtv">
+        <label for="">Nome Da Atividade:</label>
+        <input type="text" id="" placeholder="Escreva o nome...">
+
+        <label for="">Descrição:</label>
+        <textarea type="text" id=""></textarea>
+
+        <label for="">id da Turma:</label>
+        <input type="number" id="" placeholder="Escreva o id...">
+
+        <button id="Postar" onclick="AdicionarAtividadeEFechar()">Adicionar atividade</button>
+      </div>
   
       <table>
         <thead>
