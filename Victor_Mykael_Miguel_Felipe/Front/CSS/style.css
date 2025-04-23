@@ -9,6 +9,7 @@
     grid-row: span 5 / span 5;
     background-color: black;
     color: white;
+    
 }
 
 .div2 {
@@ -16,7 +17,11 @@
     grid-row: span 5 / span 5;
     background-color: red;
 }
-.logotipo{
+.logotipo {
     height:50px;
     weight:50px;
+    
+}
+body {
+    height:100dvh;
 }
