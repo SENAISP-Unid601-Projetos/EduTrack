@@ -4,18 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SENAI - Turmas</title>
-    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/styleTurmas.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    
+    <script src="../JS/ScriptTurmaGetDelete.js"></script>
 </head>
 <body>
     <div class="container">
         <aside class="sidebar">
             <div class="logo">
-                <img src="/Recursos/SENAI_São_Paulo_logo.png" alt="SENAI logo" style="width: 100%; margin-bottom: 20px;">
+                <img src="../Recursos/SENAI_São_Paulo_logo.png" alt="SENAI logo" style="width: 100%; margin-bottom: 20px;">
                 <p>Sistema de Gestão - São Carlos, SP</p>
             </div>
             <nav class="nav-top">
-                <button class="nav-button active">Turmas</button>
-                <button class="nav-button">Alunos</button>
+                <a href="Front/HTML/Turmas.html"><button class="nav-button active">Turmas</button></a>
+                <a href=""><button class="nav-button">Alunos</button></a>
                 <button class="nav-button">Atividades</button>
             </nav>
             <div class="nav-bottom">
@@ -34,16 +38,8 @@
                 </tr>
             </table>
             <table class="data-table">
-                <tbody>
-                    <tr>
-                        <td>XXXXXXX</td>
-                        <td>XXXXXXX</td>
-                        <td>XXXXXXX</td>
-                        <td>
-                            <button class="action-button delete"><img src="../Recursos/delete.png" alt="Delete"></button>
-                            <button class="action-button visualize"><img src="../Recursos/visualize.png" alt="Visualize"></button>
-                        </td>
-                    </tr>
+                <tbody id="turmasBody">
+                    
                 </tbody>
             </table>
         </main>

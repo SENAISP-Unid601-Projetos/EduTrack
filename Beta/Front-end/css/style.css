@@ -1,5 +1,5 @@
 body {
-    background-image: url('../Recursos/plano.jpg');
+    background-image: url('../img/plano.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     filter: blur(10);
