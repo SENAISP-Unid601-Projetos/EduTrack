@@ -29,10 +29,4 @@ async function login(username,senha) {
  
  
 }
-login('meuUsuario', 'minhaSenha')
- .then(data => {
-   if (data) {
-     // Faça algo com os dados do login
-     alert(`Bem-vindo, ${data.usuario.nome}!`);
-   }
- });
+login('Usuario', 'Senha')
