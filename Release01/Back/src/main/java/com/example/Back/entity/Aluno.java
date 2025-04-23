@@ -14,7 +14,8 @@ public class Aluno {
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private Long id;
     private String cpf, nome;
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name = "turma_id")
     private Turma turma;
+
 }
