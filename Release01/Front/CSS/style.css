@@ -3,52 +3,27 @@ body {
     font-family: Arial, sans-serif;
     display: flex;
     height: 100vh;
-    
+    background-image: url(../Recursos/Sala_senai.png);
 }
-
 .login-container {
-    width: 60%;
+    width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #000;
-<<<<<<< HEAD
-    padding: 20px;
-    opacity: 10px;
-    
-    
-=======
->>>>>>> 45b108c4bbbf1e80973402f941d0ea215b70105a
 }
 .login-form {
-    padding-top: 20%;
-    padding-bottom: 20%;
+    padding-top: 10%;
+    padding-bottom: 10%;
     text-align: center;
     background-color: white;
     border-radius: 60px;
-<<<<<<< HEAD
-    padding-top: 20%;
-    padding-bottom:20%;
-    
-}
-.login-form input {
-    width: 60%;
-    padding: 10px;
-=======
 }
 .login-form input {
     width: 70%;
     padding: 20px;
->>>>>>> 45b108c4bbbf1e80973402f941d0ea215b70105a
-    margin: 10px 0;
+    margin: 5px 0;
     box-sizing: border-box;
-<<<<<<< HEAD
-    
-}
-.login-form button {
-    
-    width: 60%;
-=======
     background-color: #e0e0e0;
     border: none;
     border-radius: 15px;
@@ -56,17 +31,15 @@ body {
 }
 .login-form button {
     width: 30%;
->>>>>>> 45b108c4bbbf1e80973402f941d0ea215b70105a
-    padding: 10px;
+    padding: 15px;
     margin: 5px 0;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
-<<<<<<< HEAD
-   
-=======
-    
->>>>>>> 45b108c4bbbf1e80973402f941d0ea215b70105a
+    margin-left: 20%;
+    margin-right: 20%;
+    text-align: center;
+    font-weight: bold;
 }
 .login-form button#entrar {
     background-color: #ff0000;
@@ -77,32 +50,33 @@ body {
     color: #fff;
 }
 .senai-container {
-<<<<<<< HEAD
-    width: 60%;
-    background-image: url('../Recursos/Sala_senai.png'); 
-=======
     width: 50%;
     background-image: url('../Recursos/Sala_senai.png');
->>>>>>> 45b108c4bbbf1e80973402f941d0ea215b70105a
     background-size: cover;
     background-position: center;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    
 }
-.senai-overlay img {
-    margin-left: 20%;
-    
-    width: 50%;
-
+.senai-overlay {
+    background-color: #fff;
+    color: #000000;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
 }
-
+.senai-overlay h1 {
+    font-size: 3em;
+    margin: 0;
+    color: #ff0000;
+}
 .senai-overlay p {
-    background-color: white;
-    width: 50%;
     font-size: 1.2em;
     margin: 5px 0;
-    margin-left: 20%;
+}
+
+.logoSenai {
+    display: flex;
+    justify-content: row;
 }
