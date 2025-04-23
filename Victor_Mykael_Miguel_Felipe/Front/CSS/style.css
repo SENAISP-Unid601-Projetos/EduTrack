@@ -1,40 +1,120 @@
-.parent {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-    gap: 8px;
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
 }
 
-.div1 {
-    grid-row: span 5 / span 5;
-    background-color: black;
-    color: white;
-    
-}
-
-.div2 {
-    grid-column: span 2 / span 2;
-    grid-row: span 5 / span 5;
-    background-image: url(../IMG/salaSenai.jpg);
+body {
+    display: flex;
+    background: url('../IMG/salaSenai.jpg') no-repeat center center fixed;
     background-size: cover;
 }
-.logotipo {
-    height:50px;
-    weight:50px;
-    align-items: center;    
-}
-body {
-    height:100dvh;
-}
-.button_pag{
-    background-color: red;
-    width: 125px;
-    height: 50px;
-    border-radius: 10px;    
-    font-weight: bold;
-    color: aliceblue;
-   text-align: center;
 
+
+.sidebar {
+    width: 300px;
+    background-color: #000;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    height: 100vh; 
+    box-sizing: border-box;
 }
 
 
+.logo {
+    margin-bottom: 10px;
+}
+
+.logo img {
+    width: 160px;
+}
+
+.subtitulo {
+    font-size: 12px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.menu-btn, .sair-btn {
+    width: 200px;           
+    padding: 18px;          
+    margin: 12px 0;
+    border: none;
+    border-radius: 8px;
+    font-size: 20px;        
+    color: white;
+    background-color: #FF2C2C;
+    cursor: pointer;
+}
+
+
+.sair-btn {
+    margin-top: auto;
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px;
+}
+
+.nova-turma-card {
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 30px;
+    border-radius: 10px;
+    width: 800px;
+}
+
+.nova-turma-card h1 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.aluno-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.aluno-list {
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 300px;
+    min-height: 150px;
+    padding: 10px;
+}
+
+.botoes-transferencia {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.botoes-transferencia button {
+    padding: 10px;
+    font-size: 16px;
+    width: 50px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: #FF2C2C;
+    color: white;
+}

@@ -1,45 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="../JS/script.js" defer></script>
+    <title>Nova Turma - SENAI</title>
     <link rel="stylesheet" href="../CSS/style.css">
-    <title>Cadastrar Turma</title>
 </head>
 <body>
-<div class="parent">
-        <div class="div1">
-            <div>
-                <div>
-                    <img src="../IMG/SENAI_São_Paulo_logo.png" alt="logotipo" class="logotipo">
-                    <p>Sistema de Gestão de Atividades <br>
-                         São Carlos - SP</p>    
-                </div>
-                <div>
-                    <button class="button_pag">Turmas</button><br>
-                    <button class="button_pag">Alunos</button><br>
-                    <button class="button_pag">Atividades</button><br>
-                    <button class="button_pag">Sair</button><br>
-                </div>
-            </div>
-        </div>
-        <div class="div2">
 
-            <img src="../IMG/salaSenai.jpg" alt="SalaFundo" class="SalaFundo">
-            <div>
-                <h3>Nova Turma</h3>
-            </div>
-            <label for="sigla">Sigla</label>
-            <input type="text" id="caixaSigla" placeholder="Sigla da Turma"> <br>
-            <label for="Nome">Nome</label> 
-            <input type="text" id="caixaNome" placeholder="Nome da Turma"> <br>
-            <label for="Termo">Termo</label>
-            <input type="text" id="caixaTermo" placeholder="Termo da Turma">
+    <div class="sidebar">
+        <div class="logo">
+            <img src="../IMG/SENAI_São_Paulo_logo.png" alt="Logo SENAI">
         </div>
+        <p class="subtitulo">Sistema de Gestão de atividades<br>São Carlos - SP</p>
+        <button class="menu-btn">Turmas</button>
+        <button class="menu-btn">Alunos</button>
+        <button class="menu-btn">Atividades</button>
+        <button class="sair-btn">Sair</button>
     </div>
 
+    <div class="content">
+        <div class="nova-turma-card">
+            <h1>Nova Turma</h1>
+            <div class="input-group">
+                <input type="text" placeholder="Sigla">
+                <input type="text" placeholder="Nome">
+                <input type="text" placeholder="Termo">
+            </div>
+
+            <div class="aluno-container">
+                <div class="aluno-list"></div>
+
+                <div class="botoes-transferencia">
+                    <button>&gt;&gt;</button>
+                    <button>&gt;</button>
+                    <button>&lt;</button>
+                    <button>&lt;&lt;</button>
+                </div>
+
+                <div class="aluno-list"></div>
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>
