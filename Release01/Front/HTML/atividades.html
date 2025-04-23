@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="../CSS/Atividades.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <script src="../JS/scriptATV.js" defer></script>
 </head>
 <body>
@@ -24,7 +25,7 @@
         <button class="botoes">Sair</button>
       </div>
     </div>
-
+    
     <div class="main">
       <h1 class="titulo">Atividades</h1>
       <button class="btn-add" onclick="AdicionarAtividadeMostrar()">+ Atividade</button>
@@ -40,20 +41,22 @@
 
         <button id="Postar" onclick="AdicionarAtividadeEFechar()">Adicionar atividade</button>
       </div>
-  
-      <table>
-        <thead>
-          <tr>
-            <th>Nome</th>
-            <th>Descrição</th>
-            <th>Turma</th>
-            <th>Ações</th>
-          </tr>
-        </thead>
-        <tbody id="tabela-atividades">
+
+      <div class="LugarDaTabela">
+        <table>
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Descrição</th>
+              <th>Turma</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody id="tabela-atividades">
           
-        </tbody>
-      </table>
+          </tbody>
+        </table>
+      </div>
     </div>
   
     <div class="modal" id="atividadeModal">

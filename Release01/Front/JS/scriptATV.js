@@ -18,8 +18,12 @@ async function carregarAtividades() {
         <td>${atividade.descricao}</td>
         <td>${atividade.id_turma}</td>
         <td class="actions">
-          <button class="botao" onclick="deleteAtividade(${atividade.id})">🗑️</button>
-          <button class="botao" onclick="showModal(${index})">👁️</button>
+          <button class="botao" onclick="deleteAtividade(${atividade.id})">
+            <i class="fas fa-trash fa-2x"></i>
+          </button>
+          <button class="botao" onclick="showModal(${index})">
+            <i class="fas fa-eye fa-2x"></i>
+          </button>
         </td>
       `;
       tabela.appendChild(linha);
@@ -35,7 +39,7 @@ async function AdicionarAtividadeEFechar() {
     const atv = {
         nome: document.getElementById('nome').value,
         descricao: document.getElementById('desc').value,
-        turma_id: parseInt(document.getElementById('tur').value)
+        id_turma: parseInt(document.getElementById('tur').value)
     }
 
     try {
@@ -79,7 +83,7 @@ function showModal(index) {
   const atividade = atividades[index];
   const modal = document.getElementById("atividadeModal");
 
-  modal.querySelector("h2").innerText = `Atividade #${atividade.id}`;
+  modal.querySelector("h2").innerText = `${atividade.nome}`;
   modal.querySelector("p").innerText = atividade.descricao;
   modal.querySelector("strong").innerText = `Turma ID: ${atividade.id_turma}`;
   modal.style.display = "block";
