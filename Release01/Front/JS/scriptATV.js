@@ -63,4 +63,16 @@ function closeModal() {
   document.getElementById("atividadeModal").style.display = "none";
 }
 
+function AdicionarAtividadeMostrar() {
+    const div = document.getElementById('addAtv');
+    div.style.display = "flex";
+    div.style.flexDirection = "column";
+}
+
+function AdicionarAtividadeEFechar() {
+    
+    const div = document.getElementById('addAtv');
+    div.style.display = "none";
+}
+
 window.onload = carregarAtividades;
