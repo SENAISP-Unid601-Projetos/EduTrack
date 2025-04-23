@@ -147,4 +147,52 @@ body {
     color: white;
 }
 
+.form-aluno {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 500px;
+    margin: auto;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.form-group input,
+.form-group select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.page-title {
+    font-size: 62px;
+    color: #e62828;
+    text-align: center;
+    width: 150%;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+    gap:20px;
+}
+
 
