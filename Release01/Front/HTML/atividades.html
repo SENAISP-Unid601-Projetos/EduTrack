@@ -1,51 +1,56 @@
 <!DOCTYPE html>
-<html lang="pt">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Atividades</title>
-    <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/principal.css" />
-    <script src="../JS/ScriptAtividades.js"></script>
-  </head>
-  <body>
-    <section class="displayHome">
-      <div class="gridDisplay">
-        <h1>Professor CLeiton</h1>
-        <a href="../login.html"
-          ><input id="logOut" type="button" value="sair"
-        /></a>
-      </div>
-      <a id="cadastro_atividade" href="cadastro_atividade.html"
-        ><input id="buttonClass" type="button" value="Cadastrar Atividade"
-      />
-      <table id="table" class="layoutTable">
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atividades - SENAI</title>
+  <link rel="stylesheet" href="../CSS/styleATV.css">
+  <script src="../JS/scriptATV.js" defer></script>
+</head>
+<body>
+  <div class="sidebar">
+    <div>
+      <img src="img/logo.png" alt="Logo SENAI">
+      <button>Turmas</button>
+      <button>Alunos</button>
+      <button>Atividades</button>
+    </div>
+    <button>Sair</button>
+  </div>
+
+  <div class="main">
+    <h1>Atividades</h1>
+    <button class="btn-add">+ Atividade</button>
+
+    <table>
+      <thead>
         <tr>
-          <th>Nº Atividade</th>
+          <th>Nome</th>
           <th>Descrição</th>
-          <th></th>
+          <th>Turma</th>
+          <th>Ações</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
-          <td>001</td>
-          <td>Banco de Dados</td>
-          <td>
-            <input class="delete" type="button" value="Excluir" />
-            <a href="principal.html"
-              ><input class="view" type="button" value="Vizualizar"
-            /></a>
+          <td>xxxxxxxx</td>
+          <td>xxxxxxxxx xxxxxxxxx xxxxx xxxxx xx...</td>
+          <td>xxxxxxxx</td>
+          <td class="actions">
+            <button class="botao" onclick="deleteAtividade()">🗑️</button>
+            <button class="botao" onclick="showModal()">👁️</button>
           </td>
         </tr>
-        <tr>
-          <td>002</td>
-          <td>Front-End</td>
-          <td>
-            <input class="delete" type="button" value="Excluir" />
-            <a href="principal.html"
-              ><input class="view" type="button" value="Vizualizar"
-            /></a>
-          </td>
-        </tr>
-      </table>
-    </section>
-  </body>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="modal" id="atividadeModal">
+    <h2>&lt;Nome da Atividade&gt;</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <strong>&lt;turma&gt;</strong>
+    <button class="ok-btn" onclick="closeModal()">ok</button>
+  </div>
+
+</body>
 </html>

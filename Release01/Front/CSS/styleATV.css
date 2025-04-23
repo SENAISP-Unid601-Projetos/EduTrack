@@ -1,0 +1,120 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  body {
+    background-image: url('##');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+  }
+
+  .sidebar {
+    width: 220px;
+    background-color: black;
+    color: white;
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .sidebar img {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .sidebar button {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: red;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+
+  .main {
+    flex: 1;
+    padding: 40px;
+  }
+
+  .main h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+
+  .btn-add {
+    background-color: red;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    float: right;
+    cursor: pointer;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+
+  table, th, td {
+    border: 1px solid #000;
+  }
+
+  th, td {
+    padding: 10px;
+    text-align: center;
+  }
+
+
+  .modal {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    width: 600px;
+    padding: 20px;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+    display: none;
+    z-index: 1000;
+  }
+
+  .modal h2 {
+    margin-bottom: 15px;
+  }
+
+  .modal p {
+    margin-bottom: 10px;
+    text-align: justify;
+  }
+
+  .modal .ok-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+  }
+
+  .botao{
+    padding: 10px;
+    background-color: red;
+    border-radius: 10px;
+    border: none;
+  }
