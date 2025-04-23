@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="../CSS/Atividades.css">
+  <script src="../JS/scriptATV.js" defer></script>
 </head>
 <body>
   <main class="todaApagina">
@@ -24,8 +25,38 @@
       </div>
     </div>
 
-    <div class="resto">
-
+    <div class="main">
+      <h1 class="titulo">Atividades</h1>
+      <button class="btn-add">+ Atividade</button>
+  
+      <table>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Descrição</th>
+            <th>Turma</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>xxxxxxxx</td>
+            <td>xxxxxxxxx xxxxxxxxx xxxxx xxxxx xx...</td>
+            <td>xxxxxxxx</td>
+            <td class="actions">
+              <button class="botao" onclick="deleteAtividade()">🗑️</button>
+              <button class="botao" onclick="showModal()">👁️</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+    <div class="modal" id="atividadeModal">
+      <h2>&lt;Nome da Atividade&gt;</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <strong>&lt;turma&gt;</strong>
+      <button class="ok-btn" onclick="closeModal()">ok</button>
     </div>
   </main>
 </body>
