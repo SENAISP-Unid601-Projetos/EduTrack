@@ -6,32 +6,32 @@ window.onload = function() {
         }
     });
 
-    // Chama a função FindAluno para buscar os alunos ao carregar a página
+
     FindAluno();
 
     async function FindAluno() {
         try {
-            const result = await instance.get('/alunos'); // Faz a requisição para obter os alunos
+            const result = await instance.get('/alunos'); 
 
             if (result.status === 200) {
                 imprimir(result.data); 
-                console.log(result.data);// Passa os dados para a função imprimir
+                console.log(result.data);
             }
         } catch (err) {
             console.error('Erro ao buscar os alunos:', err);
         }
     }
 
-    // Função para exibir os alunos na tabela
+ 
     function imprimir(alunos) {
         const alunosTable = document.querySelector('.alunos-table tbody');
-        alunosTable.innerHTML = ''; // Limpa a tabela antes de adicionar os alunos
+        alunosTable.innerHTML = ''; 
 
-        // Percorre o array de alunos e cria uma linha para cada um
+    
         alunos.forEach(aluno => {
             const row = document.createElement('tr');
             row.innerHTML = `
-                <td>${aluno.nome}</td>
+                <td>${aluno.nome}</td> 
                 <td>${aluno.cpf}</td>
                 <td>${aluno.id_turma}</td>
                 <td>
