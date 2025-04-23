@@ -11,15 +11,16 @@ body {
     justify-content: center;
     align-items: center;
     background-color: #000;
-    padding: 20px;
-    border-radius: 10px;
-    margin: 20px;
 }
 .login-form {
+    padding-top: 20%;
+    padding-bottom: 20%;
     text-align: center;
+    background-color: white;
+    border-radius: 60px;
 }
 .login-form input {
-    width: 100%;
+    width: 70%;
     padding: 10px;
     margin: 10px 0;
     border: 1px solid #ccc;
@@ -27,7 +28,7 @@ body {
     box-sizing: border-box;
 }
 .login-form button {
-    width: 100%;
+    width: 60%;
     padding: 10px;
     margin: 5px 0;
     border: none;
@@ -44,7 +45,7 @@ body {
 }
 .senai-container {
     width: 50%;
-    background-image: url('senai_classroom.jpg'); /* Substitua pelo caminho da imagem */
+    background-image: url('../Recursos/Sala_senai.png');
     background-size: cover;
     background-position: center;
     position: relative;
