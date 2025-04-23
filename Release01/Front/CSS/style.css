@@ -12,15 +12,21 @@ body {
     justify-content: center;
     align-items: center;
     background-color: #000;
+<<<<<<< HEAD
     padding: 20px;
     opacity: 10px;
     
     
+=======
+>>>>>>> 45b108c4bbbf1e80973402f941d0ea215b70105a
 }
 .login-form {
+    padding-top: 20%;
+    padding-bottom: 20%;
     text-align: center;
     background-color: white;
     border-radius: 60px;
+<<<<<<< HEAD
     padding-top: 20%;
     padding-bottom:20%;
     
@@ -28,21 +34,39 @@ body {
 .login-form input {
     width: 60%;
     padding: 10px;
+=======
+}
+.login-form input {
+    width: 70%;
+    padding: 20px;
+>>>>>>> 45b108c4bbbf1e80973402f941d0ea215b70105a
     margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
     box-sizing: border-box;
+<<<<<<< HEAD
     
 }
 .login-form button {
     
     width: 60%;
+=======
+    background-color: #e0e0e0;
+    border: none;
+    border-radius: 15px;
+    outline: none;
+}
+.login-form button {
+    width: 30%;
+>>>>>>> 45b108c4bbbf1e80973402f941d0ea215b70105a
     padding: 10px;
     margin: 5px 0;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+<<<<<<< HEAD
    
+=======
+    
+>>>>>>> 45b108c4bbbf1e80973402f941d0ea215b70105a
 }
 .login-form button#entrar {
     background-color: #ff0000;
@@ -53,8 +77,13 @@ body {
     color: #fff;
 }
 .senai-container {
+<<<<<<< HEAD
     width: 60%;
     background-image: url('../Recursos/Sala_senai.png'); 
+=======
+    width: 50%;
+    background-image: url('../Recursos/Sala_senai.png');
+>>>>>>> 45b108c4bbbf1e80973402f941d0ea215b70105a
     background-size: cover;
     background-position: center;
     position: relative;
