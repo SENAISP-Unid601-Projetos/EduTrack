@@ -1,30 +1,38 @@
-function login() {
-  const email = document.getElementById('emailLogin').value;
-  const senha = document.getElementById('passwordLogin').value;
+const response = axios.create( {
+  baseURL: "http://10.110.12.6:8080",
+  headers: {
+   "Content-Type": "application/json"
+  }
+  
+})
 
-  fetch('http://localhost:8080/professores/login', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ email, senha }),
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      if (data.status === 'success') {
-        alert(data.message);
 
-        // Salva o e-mail na sessão
-        sessionStorage.setItem('email', email);
+async function login(username,senha ) {
+ try {
+   const response = await response.post ('API', {
+     username: username,
+     senha: senha
+   })
 
-        // Redireciona na mesma aba
-        window.location.href = 'HTML/principal.html';
-      } else {
-        alert(data.message);
-      }
-    })
-    .catch((error) => {
-      alert('Erro ao fazer login');
-      console.log(error);
-    });
+   if(response === 200  ) {
+     console.log('Login Bem Sucedido!');
+     console.log('Dados retornados:', response.data);
+     
+     return response.data;
+   } else {
+       console.log('algo deu errado:', response.status)
+   }
+
+ }catch(err) {
+   console.error("Erro ao tentar login: ", err.response?.data || err.message)
+ }
+ 
+ 
 }
+login('meuUsuario', 'minhaSenha')
+ .then(data => {
+   if (data) {
+     // Faça algo com os dados do login
+     alert(`Bem-vindo, ${data.usuario.nome}!`);
+   }
+ });
