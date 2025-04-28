@@ -1,15 +1,16 @@
+FROM ubuntu:latest AS build
 
-FROM maven:3.8.6-openjdk-11 AS build
-WORKDIR /app
-COPY pom.xml .
-RUN mvn dependency:go-offline
-COPY src ./src
-RUN mvn package -DskipTests
+RUN apt-get update
+RUN apt-get install openjdk-17-jdk -y
+COPY . .
 
-FROM openjdk:11-jre-slim
-WORKDIR /app
-COPY --from=build /app/target/*.jar app.jar
+RUN apt=get install maven -y
+RUN mvn clean install
 
-ENV PORT 8080
-EXPOSE $PORT
-ENTRYPOINT ["java","-jar","-Dserver.port=${PORT}","app.jar"]
+FROM openjdk:17-jdk-slim
+
+EXPOSE 8080
+
+COPY --from=build /target/target/Back-0.0.1-SNAPSHOT.jar app.jar
+
+ENTRYPOINT ["java", "-jar", "app.jar"]
