@@ -14,12 +14,8 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ProfessorDTO {
-
     private Long id;
-
     private String nome;
-
     private String email;
-
     private String senha;
 }

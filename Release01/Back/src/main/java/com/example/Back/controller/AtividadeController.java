@@ -15,29 +15,29 @@ public class AtividadeController {
     private AtividadeService atividadeService;
 
     @PostMapping
-    public ResponseEntity<String> criarAtividade(@RequestBody AtividadeDTO atividade){
-        try{
+    public ResponseEntity<String> criarAtividade(@RequestBody AtividadeDTO atividade) {
+        try {
             String resultado = atividadeService.salvarAtividade(atividade);
             return ResponseEntity.ok(resultado);
-        } catch (IllegalArgumentException e){
+        } catch (IllegalArgumentException e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
 
     @GetMapping
-    public ResponseEntity<List<AtividadeDTO>> listarAtividades(){
-        try{
+    public ResponseEntity<List<AtividadeDTO>> listarAtividades() {
+        try {
             return ResponseEntity.ok(atividadeService.listarAtividade());
-        } catch (IllegalArgumentException e){
+        } catch (IllegalArgumentException e) {
             return ResponseEntity.badRequest().build();
         }
     }
 
     @GetMapping("/get/{id}")
-    public ResponseEntity<List<AtividadeDTO>> listarAtividadesPorTurma(@PathVariable Long id){
-        try{
+    public ResponseEntity<List<AtividadeDTO>> listarAtividadesPorTurma(@PathVariable Long id) {
+        try {
             return ResponseEntity.ok(atividadeService.listarAtividadeporTurma(id));
-        } catch (IllegalArgumentException e){
+        } catch (IllegalArgumentException e) {
             return ResponseEntity.badRequest().build();
         }
     }

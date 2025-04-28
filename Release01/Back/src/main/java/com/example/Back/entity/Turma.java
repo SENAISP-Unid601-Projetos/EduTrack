@@ -16,17 +16,17 @@ public class Turma {
     private Long id;
 
     private String nome;
-    private String sigla;  // Atributo de sigla
-    private String termo;   // Atributo de termo
 
+    private String sigla;
 
+    private String termo;
 
     @OneToMany(mappedBy = "turma", cascade = CascadeType.ALL)
     @JsonIgnore
-    private List<Atividade> atividades;  // Relacionamento com Atividades
+    private List<Atividade> atividades;
 
     @OneToMany(mappedBy = "turma")
     @JsonIgnore
-    private List<Aluno> alunos;  // Relacionamento com Alunos
+    private List<Aluno> alunos;
 
 }

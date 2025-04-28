@@ -17,53 +17,46 @@ public class ProfessorService {
     @Autowired
     private ProfessorRepository professorRepository;
 
-    public String salvarProfessor(ProfessorDTO professordto) {
-        if (professorRepository.existsByEmail(professordto.getEmail())){
-            return "Já existe um professor cadastrado com esse e-mail";
-        }
-        professorRepository.save(toEntity(professordto));
-        return "Professor cadastrado";
+    public String salvarProfessor(ProfessorDTO professorDTO) {
+        Professor professor = toEntity(professorDTO);
+        professorRepository.save(professor);
+        return "Professor cadastrado com sucesso";
     }
 
-    public List<ProfessorDTO> listarProfessor() {
-        return professorRepository.findAll().stream()
+    public List<ProfessorDTO> listarProfessores() {
+        return professorRepository.findAll()
+                .stream()
                 .map(this::toProfessorDTO)
                 .collect(Collectors.toList());
     }
 
-    public String atualizarTurma(Long id, ProfessorDTO professordto) {
-        if(professorRepository.existsById(id)){
+    public String atualizarProfessor(Long id, ProfessorDTO professorDTO) {
+        if (professorRepository.existsById(id)) {
             Professor professorExistente = professorRepository.findById(id).get();
-            professorExistente.setNome(professordto.getNome());
-            professorExistente.setEmail(professordto.getEmail());
-            professorExistente.setSenha(professordto.getSenha());
+            professorExistente.setNome(professorDTO.getNome());
+            professorExistente.setEmail(professorDTO.getEmail());
+            professorExistente.setSenha(professorDTO.getSenha());
             professorRepository.save(professorExistente);
-            return "Atualizado com sucesso";
+            return "Professor atualizado com sucesso";
         }
-        return "Erro ao atualizar";
+        return "Professor não encontrado";
     }
 
-    public String deletarTurma(Long id) {
-        if(professorRepository.existsById(id)){
+    public String deletarProfessor(Long id) {
+        if (professorRepository.existsById(id)) {
             professorRepository.deleteById(id);
-            return "deletado com sucesso";
+            return "Professor deletado com sucesso";
         }
-        return "Erro ao deletar";
-    }
-
-    public Professor professorPorEmail(String email) {
-        if(professorRepository.existsByEmail(email)){
-            return professorRepository.findByEmail(email).get();
-        }
-        return null;
-    }
-
-    public boolean authenticateUser(LoginDTO loginDTO) {
-        return professorRepository.findByEmail(loginDTO.getEmail()).map(professor -> professor.getSenha().equals(loginDTO.getSenha())).orElse(false);
+        return "Professor não encontrado";
     }
 
     private ProfessorDTO toProfessorDTO(Professor professor) {
-        return new ProfessorDTO(professor.getId(), professor.getNome(), professor.getEmail(), professor.getSenha());
+        return new ProfessorDTO(
+                professor.getId(),
+                professor.getNome(),
+                professor.getEmail(),
+                professor.getSenha()
+        );
     }
 
     private Professor toEntity(ProfessorDTO dto) {

@@ -14,6 +14,7 @@ public class AtividadeDTO {
     private Long id;
 
     private String descricao;
+    private String nome;
 
     private Long id_turma;
 }
