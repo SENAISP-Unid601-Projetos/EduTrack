@@ -1,10 +1,11 @@
-window.onload = function () {
-  const instance = axios.create({
-    baseURL: 'http://10.110.12.65:8080',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  });
+
+window.onload = function() {
+    const instance = axios.create({
+        baseURL: 'http://10.110.12.65:8080',  
+        headers: {
+            "Content-Type": "application/json"
+        }
+    });
 
   FindAluno();
 

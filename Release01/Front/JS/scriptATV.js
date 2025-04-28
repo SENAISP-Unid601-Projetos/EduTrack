@@ -1,8 +1,9 @@
 let atividades = [];
+const baseURL = "http://10.110.12.65:8080";
 
 async function carregarAtividades() {
   try {
-    const resposta = await axios.get('http://localhost:8080/atividades');
+    const resposta = await axios.get(`${baseURL}/atividades`);
 
     atividades = resposta.data;
 
@@ -35,13 +36,13 @@ async function carregarAtividades() {
 
 async function AdicionarAtividadeEFechar() {
     const atv = {
-        nome: document.getElementById('nome').value,
         descricao: document.getElementById('desc').value,
+        nome: document.getElementById('nome').value,
         id_turma: parseInt(document.getElementById('tur').value)
     }
 
     try {
-        const resposta = await axios.post('http://localhost:8080/atividades', atv, {
+        const resposta = await axios.post(`${baseURL}/atividades`, atv, {
             headers: { "Content-Type": "application/json" }
         });
 
@@ -64,7 +65,7 @@ async function AdicionarAtividadeEFechar() {
 async function deleteAtividade(id) {
   if (confirm("Tem certeza que deseja deletar essa atividade?")) {
     try {
-      const resposta = await axios.delete(`http://localhost:8080/atividades/deletar/${id}`);
+      const resposta = await axios.delete(`${baseURL}/atividades/deletar/${id}`);
 
       const resultado = resposta.data;
       alert(resultado);

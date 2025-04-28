@@ -40,7 +40,14 @@ body {
     background-color: red;
     margin: 0 10%;
     font-size: x-large;
+    transition: 0.3s;
 }
+
+.botoes:hover {
+  cursor:pointer;
+  transform: translateY(-5px);
+}
+
 .botaoSair {
     margin-top: 120%;
     display: flex;

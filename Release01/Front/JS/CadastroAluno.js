@@ -1,10 +1,10 @@
 window.onload = function () {
-  const instance = axios.create({
-    baseURL: 'http://10.110.12.65:8080', // URL da API
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  });
+    const instance = axios.create({
+        baseURL: 'http://10.110.12.65:8080',  // URL da API
+        headers: {
+            "Content-Type": "application/json"
+        }
+    });
 
   // Captura o formulário de cadastro
   const formAluno = document.getElementById('formAluno');
