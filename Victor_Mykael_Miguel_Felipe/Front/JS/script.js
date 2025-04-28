@@ -15,12 +15,10 @@ function getInputs() {
   const sigla = document.querySelector('#sigla').value;
   const nome = document.querySelector('#nome').value;
   const termo = document.querySelector('#termo').value;
-  console.log(sigla, nome, termo);
   postTurma(sigla, nome, termo);
 }
 
 async function postTurma(sigla, nome, termo) {
-  console.log('passei')
   try {
     const data = { sigla, nome, termo };
     const response = await instance.post('/turmas', data);
