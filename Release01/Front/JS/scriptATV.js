@@ -45,6 +45,8 @@ async function AdicionarAtividadeEFechar() {
             headers: { "Content-Type": "application/json" }
         });
 
+        alert(resposta);
+
         carregarAtividades();
 
         Fechar();
