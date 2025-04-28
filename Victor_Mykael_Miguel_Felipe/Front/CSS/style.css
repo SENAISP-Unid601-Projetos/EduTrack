@@ -11,7 +11,6 @@ body {
     background-size: cover;
 }
 
-
 .sidebar {
     width: 300px;
     background-color: #000;
@@ -20,37 +19,36 @@ body {
     flex-direction: column;
     align-items: center;
     padding: 20px 0;
-    height: 100vh; 
+    height: 100vh;
     box-sizing: border-box;
 }
 
-
 .logo {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .logo img {
-    width: 160px;
+    width: 200px;
 }
 
 .subtitulo {
-    font-size: 12px;
+    font-size: 13px;
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 45px;
+    line-height: 1.4;
 }
 
 .menu-btn, .sair-btn {
-    width: 200px;           
-    padding: 18px;          
-    margin: 12px 0;
+    width: 210px;
+    padding: 20px;
+    margin: 10px 0;
     border: none;
     border-radius: 8px;
-    font-size: 20px;        
+    font-size: 22px;
     color: white;
     background-color: #FF2C2C;
     cursor: pointer;
 }
-
 
 .sair-btn {
     margin-top: auto;
@@ -68,13 +66,13 @@ body {
 
 .nova-turma-card {
     background-color: rgba(255, 255, 255, 0.85);
-    padding: 30px;
+    padding: 35px;
     border-radius: 10px;
     width: 800px;
 }
 
 .nova-turma-card h1 {
-    font-size: 36px;
+    font-size: 38px;
     text-align: center;
     margin-bottom: 30px;
     border: 1px solid black;    
@@ -86,15 +84,17 @@ body {
     height: 40px;
     margin-bottom: 15px;
     font-size: 16px;
-    border: 1px solid #ccc;
+    border: 1px solid #666;
     border-radius: 6px;
     font-weight: bold;
 }
 
 .aluno-container {
+    flex: 1;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 20px;
 }
 
 .aluno-list {
@@ -106,19 +106,26 @@ body {
     
 }
 
+.aluno-item.selected {
+    background-color: #add8e6;
+}
+
 .botoes-transferencia {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 10px;
+    align-items: center;
+    gap: 12px;
 }
 
 .botoes-transferencia button {
-    padding: 10px;
-    font-size: 16px;
     width: 50px;
     border: none;
     border-radius: 6px;
+    background-color: transparent;
+    color: #000;
+    font-size: 20px;
+    font-weight: bold;
     cursor: pointer;
     background-color: transparent;
     color: #000;  

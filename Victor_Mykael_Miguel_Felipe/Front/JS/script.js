@@ -1,5 +1,3 @@
-import axios from 'axios';
-
 const instance = axios.create({
   baseURL: 'http://10.110.12.52:8080',
   headers: {
@@ -7,10 +5,9 @@ const instance = axios.create({
   },
 });
 
-window.onload(() => {
-  console.log('passou')
+window.onload = () => {
   getAlunos();
-});
+};
 
 async function postTurma(nome, idProfessor) {
   try {
@@ -37,16 +34,54 @@ async function getAlunos() {
 } 
 
 function formatarLista(data) {
-  data.forEach(list => {
-      const ul = document.querySelector('#list');
-      const li = document.createElement('li');
-      li.textContent = list.email; 
-      ul.appendChild(li);
-
+  const ul = document.querySelector('#list');
+  data.forEach(aluno => {
+    const li = document.createElement('li');
+    li.textContent = aluno.nome; 
+    li.classList.add('aluno-item');
+    li.addEventListener('click', () => {
+      li.classList.toggle('selected');
+    });
+    ul.appendChild(li);
   });
 }
 
+function moverSelecionados(origemId, destinoId) {
+  const origem = document.getElementById(origemId);
+  const destino = document.getElementById(destinoId);
+  const selecionados = origem.querySelectorAll('.selected');
 
+  selecionados.forEach(item => {
+    item.classList.remove('selected');
+    destino.appendChild(item);
+  });
+}
 
+document.querySelector('.botoes-transferencia').children[1].addEventListener('click', () => {
+  moverSelecionados('list', 'listSelected'); // botão >
+});
 
-console.log(getAlunos());
+document.querySelector('.botoes-transferencia').children[2].addEventListener('click', () => {
+  moverSelecionados('listSelected', 'list'); // botão <
+});
+
+// Se quiser fazer o botão ">>" (todos):
+document.querySelector('.botoes-transferencia').children[0].addEventListener('click', () => {
+  moverTodos('list', 'listSelected');
+});
+
+// Se quiser fazer o botão "<<" (todos):
+document.querySelector('.botoes-transferencia').children[3].addEventListener('click', () => {
+  moverTodos('listSelected', 'list');
+});
+
+function moverTodos(origemId, destinoId) {
+  const origem = document.getElementById(origemId);
+  const destino = document.getElementById(destinoId);
+  const todos = origem.querySelectorAll('li');
+
+  todos.forEach(item => {
+    item.classList.remove('selected');
+    destino.appendChild(item);
+  });
+}
