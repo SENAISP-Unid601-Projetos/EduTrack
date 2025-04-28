@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SENAI - Turmas</title>
+    <link rel="stylesheet" href="../CSS/styleTurmas.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    
+    <script src="../JS/ScriptTurmaGetDelete.js"></script>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="../Recursos/SENAI_São_Paulo_logo.png" alt="SENAI logo" style="width: 100%; margin-bottom: 20px;">
+                <p>Sistema de Gestão - São Carlos, SP</p>
+            </div>
+            <nav class="nav-top">
+                <a href="Front/HTML/Turmas.html"><button class="nav-button active">Turmas</button></a>
+                <a href=""><button class="nav-button">Alunos</button></a>
+                <button class="nav-button">Atividades</button>
+            </nav>
+            <div class="nav-bottom">
+                <button class="nav-button">Sair</button>
+            </div>
+        </aside>
+        <main class="main-content">
+            <h2>Turmas</h2>
+            <button class="add-button">+ turma</button>
+            <table class="header-table">
+                <tr>
+                    <th>Sigla</th>
+                    <th>Nome</th>
+                    <th>Termo</th>
+                    <th>Ações</th>
+                </tr>
+            </table>
+            <table class="data-table">
+                <tbody id="turmasBody">
+                    
+                </tbody>
+            </table>
+        </main>
+    </div>
+</body>
+</html>
