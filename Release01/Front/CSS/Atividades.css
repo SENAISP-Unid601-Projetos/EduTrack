@@ -1,0 +1,220 @@
+body {
+    margin: 0;
+    background-image: url(/media/salaSenai.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  padding: 2%;
+  height: 100vh;
+  width: 14%;
+}
+
+.logoBloco {
+    text-align: center;
+    color: white;
+}
+
+.logo {
+    width: 100%;
+}
+
+.botoesElogo {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.botoes {
+    border-style: none;
+    border-radius: 20px;
+    padding: 8% 15%;
+    color: white;
+    background-color: red;
+    margin: 0 10%;
+    font-size: x-large;
+}
+.botaoSair {
+    margin-top: 120%;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    justify-items: flex-end;
+}
+
+.main {
+  margin-left: 20%; 
+  margin-right: 2%;
+  margin-top: 2%;
+  padding: 40px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 15px;
+}
+
+.LugarDaTabela{
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 20px;
+  margin-top: 2%;
+  padding-top: 5px;
+  border-radius: 20px;
+}
+
+  .btn-add {
+    background-color: red;
+    color: white;
+    padding: 20px 40px;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: larger;
+    margin-left: 85%;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px; 
+    margin-top: 20px;
+    font-size: x-large;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: center;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+  }
+  
+  th:first-child,
+  td:first-child {
+    border-left: 1px solid #000;
+  }
+  
+  th:last-child,
+  td:last-child {
+    border-right: 1px solid #000;
+  }
+  
+  .modal {
+    position: fixed;
+    bottom: 10%;
+    left: 58%;
+    transform: translateX(-50%);
+    background-color: white;
+    width: 600px;
+    padding: 40px;
+    border-radius: 10px 10px;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+    display: none;
+    z-index: 1000;
+    font-size: large;
+  }
+
+  .modal h2 {
+    margin-bottom: 15px;
+  }
+
+  .modal p {
+    margin-bottom: 10px;
+    text-align: justify;
+  }
+
+  .modal .ok-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+  }
+
+  .botao{
+    padding: 10px;
+    background-color: red;
+    border-radius: 10px;
+    border: none;
+  }
+
+.titulo{
+    border-radius: 10px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    margin-top: 0;
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 2% 0%;
+}
+
+.adicionarAtividade{
+    position: fixed;
+    bottom: 15%;
+    left: 58%;
+    transform: translateX(-50%);
+    background-color: white;
+    width: 600px;
+    padding: 60px;
+    border-radius: 10px 10px;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+    display: none;
+    z-index: 1000;
+    font-size: large;
+}
+
+.adicionarAtividade label{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: larger;
+    width: 60%;
+    margin: 2%;
+}
+
+.adicionarAtividade textarea{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: larger;
+    width: 60%;
+    margin: 2%;
+    height: 80px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.adicionarAtividade input{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+    width: 60%;
+    margin: 2%;
+    height: 40px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.adicionarAtividade input::placeholder{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+    color: grey;
+}
+
+.adicionarAtividade button{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: larger;
+    width: 60%;
+    margin-left: 20%;
+    border-style: none;
+    border-radius: 10px;
+    background-color: red;
+    color: white;
+    margin-top: 3%;
+    padding: 15px;
+    cursor: pointer;
+}
