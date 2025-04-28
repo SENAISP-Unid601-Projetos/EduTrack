@@ -5,14 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SENAI Login</title>
     <link rel="stylesheet" href="CSS/style.css">
+    <script src="JS/login.js" defer></script>
 </head>
 <body>
     <div class="login-container">
         <div class="login-form">
-            <input type="text" placeholder="Email" class="input-field"/>
-            <input type="password" placeholder="Password" class="input-field"/>
+            <input type="text" id="email" placeholder="Email" class="input-field" />
+            <input type="password" id="senha" placeholder="Password" class="input-field" />
             <button id="entrar">Entrar</button>
-            <a href="cadastro.html"><button id="cadastre-se">Cadastre-se</button></a>
+            <a href="cadastro.html">
+                <button type="button" id="cadastre-se">Cadastre-se</button>
+            </a>
+            <!-- Área para exibir mensagens de erro -->
+            <div id="erroMensagem"></div>
         </div>
     </div>
     <div class="senai-container">
@@ -22,5 +27,8 @@
             <p>São Carlos - SP</p>
         </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> <!-- Importa o Axios -->
+    <script src="JS/seu-arquivo.js"></script> <!-- Seu JS separado (vou te passar abaixo) -->
 </body>
 </html>

@@ -1,5 +1,5 @@
 const axiosInstance = axios.create({
-  baseURL: "http://10.110.12.52:8080",
+  baseURL: "http://10.110.12.65:8080",
   headers: {
     "Content-Type": "application/json",
   }
@@ -37,11 +37,10 @@ async function cadastrar(nome, email, senha) {
   }
 }
 
-
 // Função de login
 async function login(email, senha) {
   try {
-    const response = await axiosInstance.post('API/login', {
+    const response = await axiosInstance.post('professores/login', {
       email: email,
       senha: senha
     });
@@ -54,9 +53,24 @@ async function login(email, senha) {
       console.log('Algo deu errado:', response.status);
       mostrarErro('Erro no login. Verifique suas credenciais.');
     }
-
   } catch (err) {
     console.error("Erro ao tentar login: ", err.response?.data || err.message);
     mostrarErro('Erro ao tentar login. Tente novamente mais tarde.');
   }
 }
+
+// Captura o clique no botão "Entrar"
+document.getElementById('entrar').addEventListener('click', async function() {
+  const email = document.getElementById('email').value;
+  const senha = document.getElementById('senha').value;
+
+  if (email && senha) {
+    const resultado = await login(email, senha);
+    if (resultado) {
+      // Se login der certo, redireciona para página principal (altere o nome do arquivo se precisar)
+      window.location.href = "/HTML/Turmas.html";
+    }
+  } else {
+    mostrarErro('Preencha todos os campos.');
+  }
+});
