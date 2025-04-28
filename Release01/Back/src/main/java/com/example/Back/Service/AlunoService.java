@@ -56,8 +56,14 @@ public class AlunoService {
 
 
     private AlunoDTO toAlunoDTO(Aluno aluno) {
-        return new AlunoDTO(aluno.getId(), aluno.getNome(), aluno.getCpf(), aluno.getTurma().getId());
+        return new AlunoDTO(
+                aluno.getId(),
+                aluno.getCpf(),           // cpf na posição correta
+                aluno.getNome(),          // nome na posição correta
+                aluno.getTurma().getId()
+        );
     }
+
 
     private Aluno toEntity(AlunoDTO dto) {
         Aluno aluno = new Aluno();

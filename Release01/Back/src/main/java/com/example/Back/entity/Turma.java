@@ -16,12 +16,20 @@ public class Turma {
     private Long id;
 
     private String nome;
+    private String sigla;  // Atributo de sigla
+    private String termo;   // Atributo de termo
 
-    @ManyToOne
-    @JoinColumn(name = "professor_id")
-    private Professor professor;
+    // Remover a relação com o Professor
+    // @ManyToOne
+    // @JoinColumn(name = "professor_id")
+    // private Professor professor;
 
     @OneToMany(mappedBy = "turma", cascade = CascadeType.ALL)
     @JsonIgnore
-    private List<Atividade> atividades;
+    private List<Atividade> atividades;  // Relacionamento com Atividades
+
+    @OneToMany(mappedBy = "turma")
+    @JsonIgnore
+    private List<Aluno> alunos;  // Relacionamento com Alunos
+
 }

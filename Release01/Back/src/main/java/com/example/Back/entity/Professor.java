@@ -21,8 +21,6 @@ public class Professor {
 
     private String senha;
 
-    @OneToMany(mappedBy = "professor", cascade = CascadeType.ALL)
-    @JsonIgnore
-    private List<Turma> turmas;
+
 
 }

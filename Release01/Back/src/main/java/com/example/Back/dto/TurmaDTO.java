@@ -1,14 +1,12 @@
 package com.example.Back.dto;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import jakarta.persistence.*;
+import com.example.Back.entity.Atividade;
+import com.example.Back.entity.Aluno;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
-
 
 @Data
 @AllArgsConstructor
@@ -16,9 +14,10 @@ import java.util.List;
 public class TurmaDTO {
 
     private Long id;
-
     private String nome;
-
-    private Long id_professor;
+    private String sigla;  // Atributo de sigla
+    private String termo;  // Atributo de termo
+    private List<Aluno> alunos;  // Lista de alunos (relacionamento)
+    private List<Atividade> atividades;  // Lista de atividades (relacionamento)
 
 }
