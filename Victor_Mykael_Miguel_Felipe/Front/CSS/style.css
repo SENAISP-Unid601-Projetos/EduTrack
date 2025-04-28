@@ -58,7 +58,7 @@ body {
     flex: 1;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     padding: 40px;
     padding-top: 200px;
     
@@ -68,11 +68,7 @@ body {
     background-color: rgba(255, 255, 255, 0.85);
     padding: 35px;
     border-radius: 10px;
-    width: 850px;
-    height: 80vh;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 0 10px rgba(0,0,0,0.25);
+    width: 800px;
 }
 
 .nova-turma-card h1 {
@@ -84,15 +80,12 @@ body {
 
 .input-group input {
     width: 100%;
-    padding: 12px 15px;
-    height: 40px;
+    padding: 12px;
     margin-bottom: 15px;
     font-size: 16px;
     border: 1px solid #666;
     border-radius: 6px;
     font-weight: bold;
-    color: #444;
-    background-color: #fff;
 }
 
 .aluno-container {
@@ -106,27 +99,10 @@ body {
 .aluno-list {
     border: 1px solid #ccc;
     border-radius: 6px;
-    width: 320px;
-    min-height: 300px;
-    padding: 10px;
-    background-color: transparent;
-    overflow-y: auto;
-}
-
-.aluno-list ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.aluno-list li {
-    padding: 10px 12px;
-    border-bottom: 1px solid #ddd;
-    font-size: 16px;
-}
-
-.aluno-list li:last-child {
-    border-bottom: none;
+    width: 300px;
+    min-height: 150px;
+    padding: 10px 10px 200px 10px;
+    
 }
 
 .aluno-item.selected {
@@ -143,20 +119,13 @@ body {
 
 .botoes-transferencia button {
     width: 50px;
-    height: 50px;
-    border: 1px solid #ccc;
+    border: none;
     border-radius: 6px;
     background-color: transparent;
     color: #000;
     font-size: 20px;
     font-weight: bold;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.15s ease-in-out;
-}
-
-.botoes-transferencia button:hover {
-    background-color: #f2f2f2;
+    background-color: white transparent;
+    color: rgb(0, 0, 0);   
 }
