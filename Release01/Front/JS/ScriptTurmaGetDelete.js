@@ -1,5 +1,5 @@
 const instance = axios.create({
-    baseURL: "http://10.110.12.6:8080",
+    baseURL: "http://10.110.12.65:8080",
     headers: {
         "Content-Type": "application/json"
     }
@@ -13,17 +13,17 @@ async function fetchTurmas() {
       
       turmasBody.innerHTML = '';
 
-      turmas.forEach(turma => {
+      turmas.forEach(turmas => {
           const row = document.createElement('tr');
           row.innerHTML = `
-              <td>${turma.sigla}</td>
-              <td>${turma.nome}</td>
-              <td>${turma.termo}</td>
+              <td>${turmas.sigla}</td>
+              <td>${turmas.nome}</td>
+              <td>${turmas.termo}</td>
               <td>
-                  <button class="action-button delete" onclick="deleteTurma('${turma.sigla}')">
+                  <button class="action-button delete" onclick="deleteTurma('${turmas.sigla}')">
                       <img src="../Recursos/delete.png" alt="Delete">
                   </button>
-                  <button class="action-button visualize" onclick="visualizeTurma('${turma.sigla}')">
+                  <button class="action-button visualize" onclick="visualizeTurma('${turmas.sigla}')">
                       <img src="../Recursos/visualize.png" alt="Visualize">
                   </button>
               </td>
@@ -46,21 +46,21 @@ async function fetchTurmas() {
         
         turmasBody.innerHTML = '';  // Limpa a tabela antes de adicionar os dados
 
-        turmas.forEach(turma => {
+        turmas.forEach(turmas => {
             const row = document.createElement('tr');
             
             // Atribuindo o ID da turma no atributo 'data-id' da linha, mas não o mostrando na interface
-            row.setAttribute('data-id', turma.id);
+            row.setAttribute('data-id', turmas.id);
 
             row.innerHTML = `
-                <td>${turma.sigla}</td>
-                <td>${turma.nome}</td>
-                <td>${turma.termo}</td>
+                <td>${turmas.sigla}</td>
+                <td>${turmas.nome}</td>
+                <td>${turmas.termo}</td>
                 <td>
                     <button class="action-button delete" onclick="deleteTurma(this)">
                         <img src="../Recursos/delete.png" alt="Delete">
                     </button>
-                    <button class="action-button visualize" onclick="visualizeTurma('${turma.sigla}')">
+                    <button class="action-button visualize" onclick="visualizeTurma('${turmas.sigla}')">
                         <img src="../Recursos/visualize.png" alt="Visualize">
                     </button>
                 </td>
@@ -79,7 +79,7 @@ async function deleteTurma(button) {
 
     if (confirm(`Deseja realmente excluir a turma com ID ${id}?`)) {
         try {
-            const response = await axios.delete(`http://localhost:8080/turmas/deletar/${id}`);
+            const response = await axios.delete(`/turmas/deletar/${id}`);
             if (response.status === 200) {
                 
                 row.remove();
@@ -94,3 +94,6 @@ async function deleteTurma(button) {
     }
 }
 document.addEventListener('DOMContentLoaded', fetchTurmas);
+async function visualizarTurma(button) {
+    
+}
