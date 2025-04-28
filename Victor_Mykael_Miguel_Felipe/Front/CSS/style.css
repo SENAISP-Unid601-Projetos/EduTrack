@@ -116,6 +116,6 @@ body {
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    background-color: #FF2C2C;
-    color: white;
+    background-color: white transparent;
+    color: rgb(0, 0, 0);   
 }
