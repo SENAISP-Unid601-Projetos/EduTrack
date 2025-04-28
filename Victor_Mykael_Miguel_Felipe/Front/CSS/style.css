@@ -58,9 +58,7 @@ body {
     flex: 1;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-    padding: 40px;
-    padding-top: 200px;
+    align-items: center;
     
 }
 
@@ -102,7 +100,7 @@ body {
     width: 300px;
     min-height: 150px;
     padding: 10px 10px 200px 10px;
-    
+    border-color: #000;
 }
 
 .aluno-item.selected {
@@ -119,7 +117,8 @@ body {
 
 .botoes-transferencia button {
     width: 50px;
-    border: none;
+    padding: 10px;
+    border: 1px solid black;
     border-radius: 6px;
     background-color: transparent;
     color: #000;
