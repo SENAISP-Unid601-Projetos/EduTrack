@@ -1,12 +1,10 @@
-
 let atividades = [];
 
 async function carregarAtividades() {
   try {
-    const resposta = await fetch('http://localhost:8080/atividades');
-    if (!resposta.ok) throw new Error("Erro ao buscar atividades");
+    const resposta = await axios.get('http://localhost:8080/atividades');
 
-    atividades = await resposta.json();
+    atividades = resposta.data;
 
     const tabela = document.getElementById('tabela-atividades');
     tabela.innerHTML = "";
@@ -43,20 +41,22 @@ async function AdicionarAtividadeEFechar() {
     }
 
     try {
-        const resposta = await fetch('http://localhost:8080/atividades', {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(atv)
+        const resposta = await axios.post('http://localhost:8080/atividades', atv, {
+            headers: { "Content-Type": "application/json" }
         });
 
-        const resultado = await resposta.text();
-        alert(resultado);
         carregarAtividades();
+
         Fechar();
 
     } catch (error) {
-        console.error("Erro ao carregar:", error);
-        alert("Erro ao postar atividades.");
+        if (error.response) {
+            console.error("Erro ao adicionar atividade:", error.response.data);
+            alert("Erro ao adicionar atividade: " + error.response.data.message);
+        } else {
+            console.error("Erro ao fazer requisição:", error);
+            alert("Erro ao adicionar atividade.");
+        }
     }
     
 }
@@ -64,11 +64,9 @@ async function AdicionarAtividadeEFechar() {
 async function deleteAtividade(id) {
   if (confirm("Tem certeza que deseja deletar essa atividade?")) {
     try {
-      const resposta = await fetch(`http://localhost:8080/atividades/deletar/${id}`, {
-        method: 'DELETE'
-      });
+      const resposta = await axios.delete(`http://localhost:8080/atividades/deletar/${id}`);
 
-      const resultado = await resposta.text();
+      const resultado = resposta.data;
       alert(resultado);
       carregarAtividades();
 
