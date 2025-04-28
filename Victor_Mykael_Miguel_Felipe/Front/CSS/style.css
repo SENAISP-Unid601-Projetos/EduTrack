@@ -119,6 +119,7 @@ body {
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    background-color: white transparent;
-    color: rgb(0, 0, 0);   
+    background-color: transparent;
+    color: #000;  
+    border: 1px solid 
 }
