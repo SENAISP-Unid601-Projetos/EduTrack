@@ -1,0 +1,149 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    background: url('../IMG/salaSenai.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.sidebar {
+    width: 20%;
+    background-color: #000;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+.logo {
+    margin-bottom: 15px;
+}
+
+.logo img {
+    width: 250px;
+}
+
+.subtitulo {
+    font-size: 17px;
+    text-align: center;
+    margin-bottom: 45px;
+    line-height: 1.4;
+}
+
+.menu-btn, .sair-btn {
+    width: 210px;
+    padding: 20px 20px 20px 20px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 20px;
+    font-size: 22px;
+    color: white;
+    background-color: #ff0000;
+    cursor: pointer;
+}
+
+.sair-btn {
+    margin-top: auto;
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.nova-turma-card {
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 35px;
+    border-radius: 10px;
+    width: 800px;
+}
+
+.nova-turma-card h1 {
+    font-size: 38px;
+    text-align: center;
+    margin-bottom: 30px;
+    border: 1px solid black;    
+}
+
+.input-group input {
+    width: 100%;
+    padding: 0px;
+    height: 40px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    border: 1px solid #666;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.aluno-container {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.aluno-list {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 300px;
+    min-height: 150px;
+    padding: 10px 10px 200px 10px;
+    border-color: #000;
+}
+
+.aluno-item.selected {
+    background-color: #add8e6;
+}
+
+.botoes-transferencia {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    
+}
+
+.botoes-transferencia button {
+    width: 50px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 6px;
+    background-color: transparent;
+    color: #000;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: transparent;
+    color: #000;  
+    border: 1px solid 
+}
+.div_botao_envio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+
+}
+.botao_Envio {
+    padding: 10px 45px 10px 45px;
+    border: 0px solid ;
+    border-radius: 6px;
+    color: white;
+    background-color: #ff0000;
+    font-size: 22px;
+    cursor: pointer;
+}
