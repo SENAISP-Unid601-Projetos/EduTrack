@@ -63,7 +63,8 @@ body {
     background-color: #fff;
     color: #000000;
     text-align: center;
-    padding: 10px;
+    padding-left: 9%;
+    padding-right: 9%;
     border-radius: 10px;
     position: absolute;
     bottom: 45%;
