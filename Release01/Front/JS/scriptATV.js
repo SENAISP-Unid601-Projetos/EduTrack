@@ -35,7 +35,7 @@ async function AdicionarAtividadeEFechar() {
     const atv = {
         nome: document.getElementById('nome').value,
         descricao: document.getElementById('desc').value,
-        turma_id: parseInt(document.getElementById('tur').value)
+        id_turma: parseInt(document.getElementById('tur').value)
     }
 
     try {
@@ -79,7 +79,7 @@ function showModal(index) {
   const atividade = atividades[index];
   const modal = document.getElementById("atividadeModal");
 
-  modal.querySelector("h2").innerText = `Atividade #${atividade.id}`;
+  modal.querySelector("h2").innerText = `Atividade ${atividade.nome}`;
   modal.querySelector("p").innerText = atividade.descricao;
   modal.querySelector("strong").innerText = `Turma ID: ${atividade.id_turma}`;
   modal.style.display = "block";
