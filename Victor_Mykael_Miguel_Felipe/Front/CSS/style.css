@@ -105,6 +105,10 @@ body {
     
 }
 
+.aluno-item.selected {
+    background-color: #add8e6;
+}
+
 .botoes-transferencia {
     display: flex;
     flex-direction: column;

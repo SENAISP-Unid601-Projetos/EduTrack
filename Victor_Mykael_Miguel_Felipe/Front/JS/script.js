@@ -6,7 +6,6 @@ const instance = axios.create({
 });
 
 window.onload = () => {
-  console.log('passou')
   getAlunos();
 };
 
@@ -24,11 +23,9 @@ async function postTurma(nome, idProfessor) {
 }
 
 async function getAlunos() {
-  console.log('passou get')
   try {
     const response = await instance.get('/alunos');
     if (response.status === 200) {
-      console.log(response.data)
       formatarLista(response.data)
     }
   } catch (err) {
@@ -37,11 +34,54 @@ async function getAlunos() {
 } 
 
 function formatarLista(data) {
-  data.forEach(list => {
-      const ul = document.querySelector('#list');
-      const li = document.createElement('li');
-      li.textContent = list.nome; 
-      ul.appendChild(li);
+  const ul = document.querySelector('#list');
+  data.forEach(aluno => {
+    const li = document.createElement('li');
+    li.textContent = aluno.nome; 
+    li.classList.add('aluno-item');
+    li.addEventListener('click', () => {
+      li.classList.toggle('selected');
+    });
+    ul.appendChild(li);
+  });
+}
 
+function moverSelecionados(origemId, destinoId) {
+  const origem = document.getElementById(origemId);
+  const destino = document.getElementById(destinoId);
+  const selecionados = origem.querySelectorAll('.selected');
+
+  selecionados.forEach(item => {
+    item.classList.remove('selected');
+    destino.appendChild(item);
+  });
+}
+
+document.querySelector('.botoes-transferencia').children[1].addEventListener('click', () => {
+  moverSelecionados('list', 'listSelected'); // botão >
+});
+
+document.querySelector('.botoes-transferencia').children[2].addEventListener('click', () => {
+  moverSelecionados('listSelected', 'list'); // botão <
+});
+
+// Se quiser fazer o botão ">>" (todos):
+document.querySelector('.botoes-transferencia').children[0].addEventListener('click', () => {
+  moverTodos('list', 'listSelected');
+});
+
+// Se quiser fazer o botão "<<" (todos):
+document.querySelector('.botoes-transferencia').children[3].addEventListener('click', () => {
+  moverTodos('listSelected', 'list');
+});
+
+function moverTodos(origemId, destinoId) {
+  const origem = document.getElementById(origemId);
+  const destino = document.getElementById(destinoId);
+  const todos = origem.querySelectorAll('li');
+
+  todos.forEach(item => {
+    item.classList.remove('selected');
+    destino.appendChild(item);
   });
 }
