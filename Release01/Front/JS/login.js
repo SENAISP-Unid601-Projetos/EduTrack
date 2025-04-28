@@ -45,3 +45,4 @@ async function cadastrar(email, senha) {
     console.error("Erro ao tentar cadastrar: ", err.response?.data || err.message);
   }
 }
+cadastrar("João Silva", "joao@exemplo.com", "senha123");
