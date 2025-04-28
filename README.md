@@ -1,5 +1,5 @@
 ###**URL BASE**
-URL: http://10.110.12.6:8080
+URL: http://10.110.12.52:8080
 
 ### 📘 **Turma Controller**
 
