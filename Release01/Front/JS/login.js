@@ -1,5 +1,5 @@
 const response = axios.create( {
-  baseURL: "http://10.110.12.6:8080",
+  baseURL: "http://10.110.12.52:8080",
   headers: {
    "Content-Type": "application/json"
   }
@@ -7,14 +7,14 @@ const response = axios.create( {
 })
 
 
-async function login(username,senha) {
+async function login(email,senha) {
  try {
    const response = await response.post ('API', {
-     username: username,
+     email: email,
      senha: senha
    })
 
-   if(response === 200  ) {
+   if(response === 200) {
      console.log('Login Bem Sucedido!');
      console.log('Dados retornados:', response.data);
      
@@ -29,4 +29,4 @@ async function login(username,senha) {
  
  
 }
-login('Usuario', 'Senha')
+login('Email', 'Senha')
