@@ -1,13 +1,85 @@
 body {
-    background-image: url('../Recursos/plano.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    filter: blur(10);
-    color: white;
     margin: 0;
-    padding: 0;
-    height: 100dvh;
+    font-family: Arial, sans-serif;
+    display: flex;
+    height: 100vh;
+    background-image: url(../Recursos/Sala_senai.png);
+}
+.login-container {
+    width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #000;
+}
+.login-form {
+    padding-top: 10%;
+    padding-bottom: 10%;
+    text-align: center;
+    background-color: white;
+    border-radius: 60px;
+}
+.login-form input {
+    width: 70%;
+    padding: 20px;
+    margin: 5px 0;
+    box-sizing: border-box;
+    background-color: #e0e0e0;
+    border: none;
+    border-radius: 15px;
+    outline: none;
+}
+.login-form button {
+    width: 30%;
+    padding: 15px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-left: 20%;
+    margin-right: 20%;
+    text-align: center;
+    font-weight: bold;
+}
+.login-form button#entrar {
+    background-color: #ff0000;
+    color: #fff;
+}
+.login-form button#cadastre-se {
+    background-color: #ff0000;
+    color: #fff;
+}
+.senai-container {
+    width: 50%;
+    background-image: url('../Recursos/Sala_senai.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.senai-overlay {
+    background-color: #fff;
+    color: #000000;
+    text-align: center;
+    padding-left: 9%;
+    padding-right: 9%;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 45%;
+}
+.senai-overlay h1 {
+    font-size: 3em;
+    margin: 0;
+    color: #ff0000;
+}
+.senai-overlay p {
+    font-size: 1.2em;
+    margin: 5px 0;
+}
+
+.logoSenai {
+    position: absolute;
+    bottom: 53.3%;
 }
