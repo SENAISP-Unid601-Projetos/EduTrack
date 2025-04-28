@@ -39,6 +39,7 @@ public class AtividadeService {
         if(atividadeRepository.existsById(id)){
             if(turmaRepository.existsById(atividadedto.getId_turma())){
                 Atividade atividadeExistente = atividadeRepository.findById(id).get();
+                atividadeExistente.setNome(atividadedto.getNome());
                 atividadeExistente.setDescricao(atividadedto.getDescricao());
                 atividadeExistente.setTurma(turmaRepository.findById(atividadedto.getId_turma()).get());
                 atividadeRepository.save(atividadeExistente);
@@ -51,14 +52,15 @@ public class AtividadeService {
     public String deletarAtividade(Long id) {
         if(atividadeRepository.existsById(id)){
             atividadeRepository.deleteById(id);
-            return "deletado com sucesso";
+            return "Deletado com sucesso";
         }
         return "Erro ao deletar";
     }
 
     public List<AtividadeDTO> listarAtividadeporTurma(Long idTurma) {
         if(turmaRepository.existsById(idTurma)) {
-            Turma turma = turmaRepository.findById(idTurma).orElseThrow(() -> new RuntimeException("Turma não encontrada"));
+            Turma turma = turmaRepository.findById(idTurma)
+                    .orElseThrow(() -> new RuntimeException("Turma não encontrada"));
             return atividadeRepository.findAllByTurma(turma).stream()
                     .map(this::toAtividadeDTO)
                     .collect(Collectors.toList());
@@ -67,12 +69,18 @@ public class AtividadeService {
     }
 
     private AtividadeDTO toAtividadeDTO(Atividade atividade) {
-        return new AtividadeDTO(atividade.getId(), atividade.getDescricao(), atividade.getTurma().getId());
+        return new AtividadeDTO(
+                atividade.getId(),
+                atividade.getDescricao(),
+                atividade.getNome(),
+                atividade.getTurma().getId()
+        );
     }
 
     private Atividade toEntity(AtividadeDTO dto) {
         Atividade atividade = new Atividade();
         atividade.setId(dto.getId());
+        atividade.setNome(dto.getNome());
         atividade.setDescricao(dto.getDescricao());
         atividade.setTurma(turmaRepository.findById(dto.getId_turma()).get());
         return atividade;
