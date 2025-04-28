@@ -114,6 +114,7 @@ body {
     justify-content: center;
     align-items: center;
     gap: 12px;
+    
 }
 
 .botoes-transferencia button {
@@ -129,4 +130,20 @@ body {
     background-color: transparent;
     color: #000;  
     border: 1px solid 
+}
+.div_botao_envio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+
+}
+.botao_Envio {
+    padding: 10px 45px 10px 45px;
+    border: 0px solid ;
+    border-radius: 6px;
+    color: white;
+    background-color: #ff0000;
+    font-size: 22px;
+
 }

@@ -25,9 +25,12 @@
         <div class="nova-turma-card">
             <h1>Nova Turma</h1>
             <div class="input-group">
-                <input type="text" placeholder="  Sigla">
-                <input type="text" placeholder="  Nome">
-                <input type="text" placeholder="  Termo">
+                <input type="text" id="sigla" placeholder="  Sigla">
+                <input type="text" id="nome" placeholder="  Nome">
+                <input type="text" id="termo" placeholder="  Termo">
+            </div>
+            <div class="div_botao_envio">
+                <button class="botao_Envio" id="botaoEnvio"> Cadastrar </button>
             </div>
 
             <div class="aluno-container aluno-transfer-container">
@@ -41,7 +44,7 @@
                     <button class="btn-transfer-esquerda">&lt;</button>
                     <button class="btn-transfer-todos-esquerda">&lt;&lt;</button>
                 </div>
-
+                
                 <div class="aluno-list aluno-lista">
                     <ul id="listSelected"></ul>
                 </div>
