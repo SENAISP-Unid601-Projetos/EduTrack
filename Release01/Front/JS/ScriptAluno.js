@@ -1,6 +1,6 @@
 window.onload = function() {
     const instance = axios.create({
-        baseURL: 'http://10.110.12.6:8080',  
+        baseURL: 'http://10.110.12.52:8080',  
         headers: {
             "Content-Type": "application/json"
         }
@@ -30,23 +30,31 @@ window.onload = function() {
        
         alunos.forEach(aluno => {
             const row = document.createElement('tr');
-            row.setAttribute('data-id', aluno.id); 
-
+            row.setAttribute('data-id', aluno.id);
+        
             row.innerHTML = `
                 <td>${aluno.cpf}</td>
                 <td>${aluno.nome}</td>
-                <td>${aluno.turma}</td>
+                <td>${aluno.id_turma}</td>
                 <td>
-                    <button class="action-btn delete" onclick="deleteAluno(${aluno.id})"><i class="fas fa-trash"></i></button>
+                    <button class="action-btn delete"><i class="fas fa-trash"></i></button>
                     <button class="action-btn view"><i class="fas fa-eye"></i></button>
                 </td>
             `;
+        
+            // Adicionando o evento de deleção à linha
+            const deleteButton = row.querySelector('.delete');
+            deleteButton.addEventListener('click', function() {
+                deleteAluno(aluno.id);  // Passa o ID do aluno para a função
+            });
+        
             alunosTable.appendChild(row);
         });
     }
 
     // Função para excluir o aluno
     async function deleteAluno(alunoId) {
+        console.log("clicou")
         try {
             // Confirmação de exclusão
             const confirmDelete = confirm("Tem certeza que deseja excluir este aluno?");

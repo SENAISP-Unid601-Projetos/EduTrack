@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="../CSS/Aluno.css">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="../JS/CadastroAluno.js"></script>
+    <script src="../JS/CadastroAluno.js" defer></script>
 </head>
 
 <body>
@@ -42,19 +42,13 @@
                     <label for="nome">Nome:</label>
                     <input type="text" id="nome" name="nome" required>
                 </div>
-
                 <div class="form-group">
-                    <label for="turma">Turma:</label>
-                    <select id="turma" name="turma" required>
-                        <option value="">Selecione uma turma</option>
-                        <!-- Turmas serão preenchidas via JS -->
-                    </select>
+                    <label for="turma">Número da turma</label>
+                    <input type="number" id="turma" name="turma" required>
                 </div>
-
                 <button type="submit" class="add-btn">Salvar Aluno</button>
             </form>
         </main>
     </div>
 </body>
-
 </html>
