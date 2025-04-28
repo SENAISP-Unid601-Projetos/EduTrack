@@ -2,6 +2,7 @@ package com.example.Back.Service;
 
 import com.example.Back.dto.LoginDTO;
 import com.example.Back.dto.ProfessorDTO;
+import com.example.Back.dto.ProfessorLoginDTO;
 import com.example.Back.entity.Professor;
 import com.example.Back.entity.Turma;
 import com.example.Back.repository.ProfessorRepository;
@@ -66,5 +67,19 @@ public class ProfessorService {
         professor.setEmail(dto.getEmail());
         professor.setSenha(dto.getSenha());
         return professor;
+    }
+
+    public String login(ProfessorLoginDTO professorLoginDTO) {
+        var professor = professorRepository.findByEmail(professorLoginDTO.getEmail());
+
+        if (professor.isPresent()) {
+            if (professor.get().getSenha().equals(professorLoginDTO.getSenha())) {
+                return "Login realizado com sucesso";
+            } else {
+                return "Senha incorreta";
+            }
+        } else {
+            return "Professor não encontrado";
+        }
     }
 }

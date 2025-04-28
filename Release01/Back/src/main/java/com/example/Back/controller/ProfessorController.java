@@ -3,6 +3,7 @@ package com.example.Back.controller;
 import com.example.Back.Service.ProfessorService;
 import com.example.Back.dto.LoginDTO;
 import com.example.Back.dto.ProfessorDTO;
+import com.example.Back.dto.ProfessorLoginDTO;
 import com.example.Back.entity.Professor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
@@ -41,5 +42,20 @@ public class ProfessorController {
     public String deletar(@PathVariable Long id) {
         return professorService.deletarProfessor(id);
     }
+
+    @PostMapping("/login")
+    public ResponseEntity<String> loginProfessor(@RequestBody ProfessorLoginDTO professorLoginDTO) {
+        try {
+            String resultado = professorService.login(professorLoginDTO);
+            if (resultado.equals("Login realizado com sucesso")) {
+                return ResponseEntity.ok(resultado);
+            } else {
+                return ResponseEntity.badRequest().body(resultado);
+            }
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body("Erro no login: " + e.getMessage());
+        }
+    }
+
 
 }
