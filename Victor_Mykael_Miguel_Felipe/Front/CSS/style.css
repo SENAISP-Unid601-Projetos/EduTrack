@@ -40,13 +40,13 @@ body {
 
 .menu-btn, .sair-btn {
     width: 210px;
-    padding: 20px;
+    padding: 20px 20px 20px 20px;
     margin: 10px 0;
     border: none;
-    border-radius: 8px;
+    border-radius: 20px;
     font-size: 22px;
     color: white;
-    background-color: #FF2C2C;
+    background-color: #ff0000;
     cursor: pointer;
 }
 
