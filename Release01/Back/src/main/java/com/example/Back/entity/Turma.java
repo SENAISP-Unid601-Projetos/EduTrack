@@ -19,10 +19,7 @@ public class Turma {
     private String sigla;  // Atributo de sigla
     private String termo;   // Atributo de termo
 
-    // Remover a relação com o Professor
-    // @ManyToOne
-    // @JoinColumn(name = "professor_id")
-    // private Professor professor;
+
 
     @OneToMany(mappedBy = "turma", cascade = CascadeType.ALL)
     @JsonIgnore

@@ -10,7 +10,9 @@ import java.util.Optional;
 public interface AlunoRepository extends JpaRepository<Aluno, Long> {
     Optional<Aluno> findByCpf(String cpf);
 
+
     List<Aluno> findByTurmaId(Long turmaId);
+
 
 
 }
