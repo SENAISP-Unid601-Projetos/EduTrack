@@ -6,12 +6,23 @@ const instance = axios.create({
 });
 
 window.onload = () => {
+  const btnPost = document.querySelector('#botaoEnvio');
   getAlunos();
+  btnPost ? btnPost.addEventListener('click', getInputs) : null;
 };
 
-async function postTurma(nome, idProfessor) {
+function getInputs() {
+  const sigla = document.querySelector('#sigla').value;
+  const nome = document.querySelector('#nome').value;
+  const termo = document.querySelector('#termo').value;
+  console.log(sigla, nome, termo);
+  postTurma(sigla, nome, termo);
+}
+
+async function postTurma(sigla, nome, termo) {
+  console.log('passei')
   try {
-    const data = { nome, idProfessor };
+    const data = { sigla, nome, termo };
     const response = await instance.post('/turmas', data);
     if (response.status === 201) {
       return response.data;
