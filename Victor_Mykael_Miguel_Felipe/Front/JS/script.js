@@ -46,4 +46,7 @@ function formatarLista(data) {
   });
 }
 
+
+
+
 console.log(getAlunos());
