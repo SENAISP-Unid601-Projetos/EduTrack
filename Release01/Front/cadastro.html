@@ -1,37 +1,41 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SENAI Cadastro</title>
-    <link rel="stylesheet" href="CSS/style.css">
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SENAI Cadastro</title>
+  <link rel="stylesheet" href="CSS/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
-    <div class="login-container">
-        <div class="login-form">
-        
-            <input type="text" id="nome" placeholder="Nome" class="input-field"/>
-            <input type="text" id="email" placeholder="Email" class="input-field"/>
-            <input type="password" id="senha" placeholder="Senha" class="input-field"/>
-            <button type="button" onclick="cadastrar(document.getElementById('nome').value,
-             document.getElementById('email').value,
-             document.getElementById('senha').value)">Cadastrar</button>
-            
-            
-            <div id="erroMensagem"></div>
-        </div>
-        
-    </div>
-    <div class="senai-container">
-        <img src="Recursos/Logo_senai.png" alt="Logo do Senai" class="logoSenai" width="450px">
-        <div class="senai-overlay">
-            <p>Sistema de Gestão de Atividades</p>
-            <p>São Carlos - SP</p>
-        </div>
-    </div>
 
-    <script src="JS/login.js"></script>     
+  <div class="login-container">
+    <form class="login-form" id="formCadastro">
+      <label for="nome">Nome</label>
+      <input type="text" id="nome" placeholder="Nome" class="input-field" required/><br>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Email" class="input-field" required/><br>
+
+      <label for="senha">Senha</label>
+      <input type="password" id="senha" placeholder="Senha" class="input-field" required/>
+
+      <button type="button" id="btnCadastrar">Cadastrar</button>
+      <button type="button" id="btnVoltar">Voltar</button>
+
+      <div id="erroMensagem"></div>
+      <div id="sucessoMensagem"></div>
+    </form>
+  </div>
+
+  <div class="senai-container">
+    <img src="Recursos/Logo_senai.png" alt="Logo do Senai" class="logoSenai" width="450px">
+    <div class="senai-overlay">
+      <p>Sistema de Gestão de Atividades</p>
+      <p>São Carlos - SP</p>
+    </div>
+  </div>
+
+  <script src="JS/login.js"></script>
 </body>
 </html>

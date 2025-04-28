@@ -4,22 +4,25 @@ body {
     display: flex;
     height: 100vh;
     background-image: url(../Recursos/Sala_senai.png);
-}
-.login-container {
+  }
+  
+  .login-container {
     width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #000;
-}
-.login-form {
+  }
+  
+  .login-form {
     padding-top: 10%;
     padding-bottom: 10%;
     text-align: center;
     background-color: white;
     border-radius: 60px;
-}
-.login-form input {
+  }
+  
+  .login-form input {
     width: 70%;
     padding: 20px;
     margin: 5px 0;
@@ -28,8 +31,9 @@ body {
     border: none;
     border-radius: 15px;
     outline: none;
-}
-.login-form button {
+  }
+  
+  .login-form button {
     width: 30%;
     padding: 15px;
     margin: 5px 0;
@@ -40,16 +44,19 @@ body {
     margin-right: 20%;
     text-align: center;
     font-weight: bold;
-}
-.login-form button#entrar {
+  }
+  
+  .login-form button#btnCadastrar {
     background-color: #ff0000;
     color: #fff;
-}
-.login-form button#cadastre-se {
-    background-color: #ff0000;
+  }
+  
+  .login-form button#btnVoltar {
+    background-color: #000;
     color: #fff;
-}
-.senai-container {
+  }
+  
+  .senai-container {
     width: 50%;
     background-image: url('../Recursos/Sala_senai.png');
     background-size: cover;
@@ -58,8 +65,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-.senai-overlay {
+  }
+  
+  .senai-overlay {
     background-color: #fff;
     color: #000000;
     text-align: center;
@@ -68,18 +76,33 @@ body {
     border-radius: 10px;
     position: absolute;
     bottom: 45%;
-}
-.senai-overlay h1 {
+  }
+  
+  .senai-overlay h1 {
     font-size: 3em;
     margin: 0;
     color: #ff0000;
-}
-.senai-overlay p {
+  }
+  
+  .senai-overlay p {
     font-size: 1.2em;
     margin: 5px 0;
-}
-
-.logoSenai {
+  }
+  
+  .logoSenai {
     position: absolute;
     bottom: 53.3%;
-}
+  }
+  
+  #erroMensagem {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  
+  #sucessoMensagem {
+    color: green;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  
