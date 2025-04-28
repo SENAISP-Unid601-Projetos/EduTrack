@@ -87,6 +87,7 @@ body {
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 6px;
+    font-weight: bold;
 }
 
 .aluno-container {
@@ -96,13 +97,12 @@ body {
 }
 
 .aluno-list {
-    background: white opacity;
     border: 1px solid #ccc;
     border-radius: 6px;
     width: 300px;
     min-height: 150px;
-    padding: 10px;
-
+    padding: 10px 10px 200px 10px;
+    
 }
 
 .botoes-transferencia {
@@ -119,6 +119,6 @@ body {
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    background-color: #FF2C2C;
-    color: white;
+    background-color: white transparent;
+    color: rgb(0, 0, 0);   
 }
