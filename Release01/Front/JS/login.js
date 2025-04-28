@@ -26,10 +26,11 @@ async function login(email, senha) {
   }
 }
 
-// Função de cadastro
-async function cadastrar(email, senha) {
+// Função de cadastro com nome
+async function cadastrar(nome, email, senha) {
   try {
     const response = await axiosInstance.post('API/cadastro', {
+      nome: nome,  
       email: email,
       senha: senha,
     });
@@ -45,4 +46,3 @@ async function cadastrar(email, senha) {
     console.error("Erro ao tentar cadastrar: ", err.response?.data || err.message);
   }
 }
-cadastrar("João Silva", "joao@exemplo.com", "senha123");
