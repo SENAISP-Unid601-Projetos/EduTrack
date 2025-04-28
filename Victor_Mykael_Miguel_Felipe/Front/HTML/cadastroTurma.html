@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nova Turma - SENAI</title>
     <link rel="stylesheet" href="../CSS/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="../JS/script.js"></script>
 </head>
 <body>
 
@@ -29,7 +31,9 @@
             </div>
 
             <div class="aluno-container">
-                <div class="aluno-list"></div>
+                <div class="aluno-list">
+                    <ul id="list"></ul>           
+                </div>
 
                 <div class="botoes-transferencia">
                     <button>&gt;&gt;</button>
@@ -38,7 +42,9 @@
                     <button>&lt;&lt;</button>
                 </div>
 
-                <div class="aluno-list"></div>
+                <div class="aluno-list">
+
+                </div>
             </div>
         </div>
     </div>

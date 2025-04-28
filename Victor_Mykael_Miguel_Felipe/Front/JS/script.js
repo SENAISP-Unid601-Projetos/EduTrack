@@ -7,6 +7,11 @@ const instance = axios.create({
   },
 });
 
+window.onload(() => {
+  console.log('passou')
+  getAlunos();
+});
+
 async function postTurma(nome, idProfessor) {
   try {
     const data = { nome, idProfessor };
@@ -24,12 +29,21 @@ async function getAlunos() {
   try {
     const response = await instance.get('/alunos');
     if (response.status === 200) {
-      return response.data;
+      formatarLista(response.data)
     }
   } catch (err) {
     console.error('error', err);
-    throw err;
   }
+} 
+
+function formatarLista(data) {
+  data.forEach(list => {
+      const ul = document.querySelector('#list');
+      const li = document.createElement('li');
+      li.textContent = list.email; 
+      ul.appendChild(li);
+
+  });
 }
 
 console.log(getAlunos());

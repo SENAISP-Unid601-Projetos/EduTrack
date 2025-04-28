@@ -93,12 +93,13 @@ body {
 }
 
 .aluno-list {
-    background: white;
+    background: white opacity;
     border: 1px solid #ccc;
     border-radius: 6px;
     width: 300px;
     min-height: 150px;
     padding: 10px;
+
 }
 
 .botoes-transferencia {
