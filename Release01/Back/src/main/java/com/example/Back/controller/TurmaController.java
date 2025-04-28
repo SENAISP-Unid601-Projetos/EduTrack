@@ -1,6 +1,7 @@
 package com.example.Back.controller;
 
 import com.example.Back.Service.TurmaService;
+import com.example.Back.dto.AlunoDTO;
 import com.example.Back.dto.TurmaDTO;
 import com.example.Back.entity.Turma;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,50 +16,22 @@ public class TurmaController {
     private TurmaService turmaService;
 
     @PostMapping
-    public ResponseEntity<String> criarTurma(@RequestBody TurmaDTO turma) {
-        try {
-            String resultado = turmaService.salvarTurma(turma);
-            return ResponseEntity.ok(resultado);
-        } catch (IllegalArgumentException e) {
-            return ResponseEntity.badRequest().body(e.getMessage());
-        }
-    }
-
-    @GetMapping
-    public ResponseEntity<List<TurmaDTO>> listarTurmas() {
-        try {
-            return ResponseEntity.ok(turmaService.listarTurmas());
-        } catch (IllegalArgumentException e) {
-            return ResponseEntity.badRequest().build();
-        }
-    }
-
-    @GetMapping("/get/{email}")
-    public ResponseEntity<List<TurmaDTO>> listarTurmasProfessores(@PathVariable String email) {
-        try {
-            return ResponseEntity.ok(turmaService.listarTurmasporProfessor(email));
-        } catch (IllegalArgumentException e) {
-            return ResponseEntity.badRequest().build();
-        }
+    public String salvarTurma(@RequestBody TurmaDTO turmadto) {
+        return turmaService.salvarTurma(turmadto);
     }
 
     @PutMapping("/atualizar/{id}")
-    public ResponseEntity<String> atualizarTurma(@PathVariable Long id, @RequestBody TurmaDTO turma) {
-        try {
-            String resultado = turmaService.atualizarTurma(id, turma);
-            return ResponseEntity.ok(resultado);
-        } catch (IllegalArgumentException e) {
-            return ResponseEntity.badRequest().body(e.getMessage());
-        }
+    public String atualizarTurma(@PathVariable Long id, @RequestBody TurmaDTO turmadto) {
+        return turmaService.atualizarTurma(id, turmadto);
+    }
+
+    @GetMapping
+    public List<TurmaDTO> listarTurmas() {
+        return turmaService.listarTurmas();
     }
 
     @DeleteMapping("/deletar/{id}")
-    public ResponseEntity<String> deletarTurma(@PathVariable Long id) {
-        try {
-            String resultado = turmaService.deletarTurma(id);
-            return ResponseEntity.ok(resultado);
-        } catch (IllegalArgumentException e) {
-            return ResponseEntity.badRequest().body(e.getMessage());
-        }
+    public String deletar(@PathVariable Long id) {
+        return turmaService.deletarTurma(id);
     }
 }

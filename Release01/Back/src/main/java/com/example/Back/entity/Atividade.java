@@ -13,6 +13,7 @@ public class Atividade {
     private Long id;
 
     private String descricao;
+    private String nome;
 
     @ManyToOne
     @JoinColumn(name = "turma_id")

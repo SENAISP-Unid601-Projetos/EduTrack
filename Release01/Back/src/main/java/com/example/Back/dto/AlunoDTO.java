@@ -1,5 +1,6 @@
 package com.example.Back.dto;
 
+import com.example.Back.entity.Aluno;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,4 +13,6 @@ public class AlunoDTO {
     private String cpf;
     private String nome;
     private Long id_turma;
+
+
 }

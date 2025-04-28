@@ -17,11 +17,16 @@ public class Turma {
 
     private String nome;
 
-    @ManyToOne
-    @JoinColumn(name = "professor_id")
-    private Professor professor;
+    private String sigla;
+
+    private String termo;
 
     @OneToMany(mappedBy = "turma", cascade = CascadeType.ALL)
     @JsonIgnore
     private List<Atividade> atividades;
+
+    @OneToMany(mappedBy = "turma")
+    @JsonIgnore
+    private List<Aluno> alunos;
+
 }

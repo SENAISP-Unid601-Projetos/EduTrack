@@ -12,17 +12,10 @@ import java.util.List;
 public class Professor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private Long id;
 
     private String nome;
-
     private String email;
-
     private String senha;
-
-    @OneToMany(mappedBy = "professor", cascade = CascadeType.ALL)
-    @JsonIgnore
-    private List<Turma> turmas;
 
 }

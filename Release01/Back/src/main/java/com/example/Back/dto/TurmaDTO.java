@@ -14,11 +14,9 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class TurmaDTO {
-
     private Long id;
-
     private String nome;
-
-    private Long id_professor;
+    private String sigla;
+    private String termo;
 
 }
