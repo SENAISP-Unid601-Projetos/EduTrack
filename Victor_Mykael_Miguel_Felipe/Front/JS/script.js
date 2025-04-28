@@ -15,7 +15,22 @@ function getInputs() {
   const sigla = document.querySelector('#sigla').value;
   const nome = document.querySelector('#nome').value;
   const termo = document.querySelector('#termo').value;
-  postTurma(sigla, nome, termo);
+  const btnEnvio = document.querySelector('.div_botao_envio');
+  const p = document.createElement('p');
+  p.textContent = "campos vazios";
+  
+  if(sigla === '' || nome === '' || termo === '') {
+    postTurma(sigla, nome, termo);
+  } else{
+    btnEnvio.appendChild(p);
+    setTimeout(() =>{
+      btnEnvio.removeChild(p);
+    }, 2000);
+  }
+
+  sigla.value = '';
+  nome.value = '';
+  termo.value = '';
 }
 
 async function postTurma(sigla, nome, termo) {
