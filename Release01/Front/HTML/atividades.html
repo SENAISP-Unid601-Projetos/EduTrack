@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="../CSS/Atividades.css">
   <script src="../JS/scriptATV.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
   <main class="todaApagina">
@@ -25,7 +26,7 @@
         <button class="botoes">Sair</button>
       </div>
     </div>
-
+    
     <div class="main">
       <h1 class="titulo">Atividades</h1>
       <button class="btn-add" onclick="AdicionarAtividadeMostrar()">+ Atividade</button>
@@ -41,20 +42,22 @@
 
         <button id="Postar" onclick="AdicionarAtividadeEFechar()">Adicionar atividade</button>
       </div>
-  
-      <table>
-        <thead>
-          <tr>
-            <th>Nome</th>
-            <th>Descrição</th>
-            <th>Turma</th>
-            <th>Ações</th>
-          </tr>
-        </thead>
-        <tbody id="tabela-atividades">
+
+      <div class="LugarDaTabela">
+        <table>
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Descrição</th>
+              <th>Turma</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody id="tabela-atividades">
           
-        </tbody>
-      </table>
+          </tbody>
+        </table>
+      </div>
     </div>
   
     <div class="modal" id="atividadeModal">
